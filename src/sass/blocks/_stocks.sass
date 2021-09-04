@@ -1,0 +1,104 @@
+.stocks
+    background: #FFFFFF
+    padding: 71px 0
+    color: #343434
+    a.logo
+        font-family: Paytone One
+        font-style: normal;
+        font-weight: normal;
+        font-size: 37px
+        letter-spacing: 0.7em
+        text-transform: uppercase
+        color: #000
+    &__title 
+        margin-top: 40px
+        margin-bottom: 97px
+    &__logo
+        text-align: center
+    &__subtitle
+        text-align: center
+        margin-top: 400px
+        font-weight: bold
+        font-size: 48px
+    &__wrapper
+        display: flex
+        justify-content: center
+        gap: 58px
+        margin-top: 22px
+    &__gift 
+        width: 142px
+        height: 142px
+        background: #FF8484
+        box-shadow: 0px 0px 27px #FF8484
+        border-radius: 10px
+        text-align: center
+        svg
+            width: 90px
+            height: 103px
+            margin-top: 20px
+    &__text
+        width: 770px
+        font-weight: bold
+    &__descr
+        font-size: 36px
+        line-height: 43px
+    &__certificate-date
+        font-size: 18px
+        margin-top: 30px
+    &__form
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        width: 645px
+        margin: 97px auto 0 auto
+    &__input   
+        margin-top: 90px   
+        position: relative
+        &-field
+            background: none
+            border: none
+            border-bottom: 1px solid rgba(14, 18, 21, 0.4)
+            height: 32px
+            width: 645px
+            outline: none
+            color: #000
+            padding-left: 10px
+            &:focus
+                border-bottom-color: #000
+                &+label
+                    transform: translateY(-1.5rem)
+                    color: #000
+                    &::before
+                        background: #000
+        label
+            position: absolute
+            left: 18px
+            bottom: 5px
+            text-transform: uppercase
+            color: rgba(14, 18, 21, 0.4)
+            font-size: 36px
+            font-weight: 200
+            margin: 0
+            transition: 0.3s all
+            &::before
+                position: absolute
+                content: ''
+                width: 8px
+                height: 2px
+                background: #A7A7A7
+                top: 65%
+                left: -15px
+    &__btn
+        font-size: 24px
+        text-align: center
+        text-transform: uppercase
+        color: rgba(14, 18, 21, 0.4)
+        font-weight: bold
+        width: 170px
+        background: none
+        border: none
+        border-bottom: 5px solid rgba(14, 18, 21, 0.4)
+        outline: none
+        margin-top: 20px
+        &:focus
+            outline: none

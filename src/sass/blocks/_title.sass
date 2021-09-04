@@ -1,0 +1,33 @@
+.title
+    font-style: normal
+    font-weight: bold
+    font-size: 64px
+    line-height: 95px
+    text-align: center
+    text-transform: uppercase
+    letter-spacing: 0.15em
+    color: #fff
+    &_black 
+        color:#343434
+    &__line
+        position: relative
+        font-weight: bold
+        font-size: 24px
+        text-align: center
+        letter-spacing: 0.055em
+        line-height: 110%
+        &::before
+            position: absolute
+            top: 50%
+            transform: translateY(50%)
+            content: ''
+            background-color: #fff
+            height: 4px
+        &::after
+            position: absolute
+            top: 50%
+            transform: translateY(50%)
+            content: ''
+            background-color: #fff
+            height: 4px
+
