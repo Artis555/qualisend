@@ -1,12 +1,12 @@
 .contacts
-    background: url('../img/bg/questions.jpg') no-repeat 100%/cover
-    padding: 73px 0 72px 0
+    background: url('../img/bg/questions.jpg') center (center/cover) no-repeat
+    padding: 75px 0
     position: relative
     &__title
-        &::before
+        &:before
             width: 239px
             left: 190px
-        &::after
+        &:after
             width: 239px
             right: 195px
     &__subtitle
@@ -15,15 +15,21 @@
         font-size: 24px
         letter-spacing: 0.055em
         color: #fff
+    &__wrapper
+        margin-top: 40px
+        display: grid
+        grid-template: auto / repeat(2, 370px)
+        justify-content: space-around
     &__form
         display: flex
         flex-direction: column
         align-items: flex-end
-        width: 370px
-        margin: 45px 0 0 100px
-    &__input   
-        margin-top: 45px   
+        margin-top: 60px
+    &__input
         position: relative
+        margin-bottom: 40px
+        &:nth-child(4)
+            margin-bottom: 20px
         &-field
             background: none
             border: none
@@ -70,14 +76,10 @@
         display: flex
         flex-direction: column
         justify-content: space-between
-        position: absolute
-        top: 105px
-        right: 280px
-        width: 190px
-        height: 240px
-        color: #A7A7A7
+        color: #a7a7a7
         font-weight: 200
         font-size: 18px
+        height: 235px
         &-socials
             img
                 width: 18px
@@ -85,7 +87,7 @@
         &-item
             margin-left: 28px
             position: relative
-            &::before
+            &:before
                 position: absolute
                 left: -28px
                 top: 50%
@@ -94,7 +96,3 @@
                 width: 12px
                 height: 2px
                 background: #A7A7A7
-
-
-
-

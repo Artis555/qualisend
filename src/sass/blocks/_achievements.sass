@@ -1,18 +1,17 @@
 .achievements
     background: #0e1215
-    padding-top: 33px
+    padding-top: 30px
     color: #fff
+    padding-bottom: 400px
     &__wrapper
         display: grid
         grid-template: repeat(3, 80px) / repeat(auto-fit, 470px)
         grid-auto-rows: 80px
-        margin: 71px auto 0 auto
+        margin: 0 auto
+        margin-top: 70px
         gap: 55px
         justify-content: space-between
-    img
-        width: 100%
-        margin-top: 71px
-        
+
 .achievement
     display: flex
     justify-content: space-between
@@ -22,11 +21,10 @@
         width: 300px
         letter-spacing: 0.1em
     &__count
-        background: #FF8484
-        box-shadow: 0px 0px 27px #FF8484
+        background: $main-color
+        box-shadow: 0px 0px 27px $main-color
         border-radius: 10px
         font-size: 48px
         width: 170px
         text-align: center
         line-height: 88px
-

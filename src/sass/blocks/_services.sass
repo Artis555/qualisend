@@ -1,31 +1,29 @@
 .services
     text-align: center
-    padding: 71px 0
-    background: url(../img/bg/services.jpg) no-repeat 100%/cover
+    padding: 70px 0
+    background: url(../img/bg/services.jpg) center (center/cover) no-repeat
     &__title
         color: #fff
-        &::before
+        &:before
             width: 331px
             height: 4px
             left: 200px
-        &::after
+        &:after
             width: 331px
             height: 4px
             left: 635px
-    &__wrapper 
+    &__wrapper
         display: grid
-        grid-template: repeat(2, 361px) / repeat(auto-fit, 270px)
-        justify-content: space-around
-        gap: 55px
-        margin-top: 87px
+        grid-template: auto / repeat(auto-fit, 270px)
+        grid-auto-rows: 360px
+        justify-content: space-between
+        gap: 60px
+        margin-top: 85px
     &__card
-        width: 270px
-        height: 361px
-        background: #FFFFFF
-        box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.19)
-        backdrop-filter: blur(16px)
+        height: 360px
+        background: #fff
         border-radius: 10px
-        color:#343434
+        color: #343434
         text-align: center
         padding: 17px 24px 24px 17px
         position: relative
@@ -44,9 +42,7 @@
             bottom: 17px
             left: 50%
             transform: translateX(-50%)
-            background: #FFFFFF
+            background: #fff
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
             border: none
             border-radius: 41px
-
-
