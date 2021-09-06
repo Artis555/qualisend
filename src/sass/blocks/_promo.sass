@@ -2,24 +2,25 @@
     min-height: 100vh
     background: url('../img/bg/main.jpg') center (center/cover) no-repeat
     padding-top: 71px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        width: 100%
+        position: relative
+        z-index: 201
+        &.active
+            position: fixed
+            width: 1170px
+            top: 70px
+            .hamburger 
+                
     a.logo
         font-family: 'El Messiri', sans-serif
-        // font-family: Paytone One
-
         text-decoration: none
         font-size: 37px
         letter-spacing: 0.7em
         text-transform: uppercase
         color: #FFF
-    &__header
-        position: relative
-        display: flex
-        justify-content: space-between
-        z-index: 210
-        &.active
-            position: fixed
-            width: 1170px
-            top: 70px
     &__title
         margin-top: 100px
         margin-bottom: 140px
