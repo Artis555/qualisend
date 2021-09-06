@@ -12,17 +12,23 @@
             height: 4px
             right: 190px
     &__form
-        display: flex
+        display: grid
+        grid-template: auto / repeat(2, 370px)
         justify-content: center
-        flex-wrap: wrap
         row-gap: 60px
         column-gap: 30px
-        margin: 0 auto
         margin-top: 75px
-        input
+        input.request__input
             width: 370px
             height: 63px
             padding-left: 14px
+    &__policy
+        color: #fff
+        font-size: 15px
+        display: flex
+        align-items: center
+        input 
+            margin-right: 10px
     &__btn
         width: 370px
         height: 63px

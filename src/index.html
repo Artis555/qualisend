@@ -13,80 +13,84 @@
 <body>
 
     <div class="menu">
-        <a href="#" class="logo">qualis</a>
-        <div class="menu__block">
-            <nav class="menu__links">
-                <div class="menu__link menu__link-active">главная</div>
-                <div class="menu__link">ПОРТФОЛИО</div>
-                <div class="menu__link">о нас</div>
-                <div class="menu__link">КОНТАКТЫ</div>
-                <div class="menu__link">уСЛУГИ</div>
-                <div class="menu__link">АКЦИИ</div>
-                <div class="menu__link">цена</div>
-            </nav>
-            <div class="menu__socials">
-                <a href="#" class="menu__socials-item">
+        <div class="container">
+            <div class="menu__wrapper">
+                <nav class="menu__links">
+                    <a href="#" class="menu__link menu__link-active">главная</a>
+                    <a href="#" class="menu__link">ПОРТФОЛИО</a>
+                    <a href="#" class="menu__link">о нас</a>
+                    <a href="#" class="menu__link">КОНТАКТЫ</a>
+                    <a href="#" class="menu__link">уСЛУГИ</a>
+                    <a href="#" class="menu__link">АКЦИИ</a>
+                    <a href="#" class="menu__link">цена</a>
+                </nav>
+                <div class="menu__socials">
                     <img src="icons/social/img.svg" alt="instagram">
-                </a>
-                <a href="#" class="menu__socials-item">
                     <img src="icons/social/vk.svg" alt="vk">
-                </a>
+                </div>
             </div>
         </div>
-        <aside class="sidepanel">
-            <div class="sidepanel__wrapper">
-                <div class="sidepanel__text">
-                    <div class="title title__line sidepanel__title">ПОЯВИЛИСЬ ВОПРОСЫ?</div>
+
+        <div class="sidepanel">
+            <div class="sidepanel__text">
+                <div class="title title__line sidepanel__title">ПОЯВИЛИСЬ ВОПРОСЫ?</div>
+                <div class="sidepanel__subtitle">свяжитесь с нами!</div>
+                <img class="sidepanel__arrow" src="icons/left-arrow.svg" alt="arrow">
+            </div>
+                
+            <div class="sidepanel__block">
+                <div class="sidepanel__block-text">
+                    <div class="title sidepanel__block-title">ПОЯВИЛИСЬ ВОПРОСЫ?</div>
                     <div class="sidepanel__subtitle">свяжитесь с нами!</div>
                 </div>
-
-                <div class="sidepanel__block">
-                    <form action="#" class="sidepanel__form">
-                        <div class="sidepanel__input">
-                            <input required class="sidepanel__input-field" name="sidepanel_name" type="text"
-                                id="sidepanel_name">
-                            <label for="sidepanel_name">фио</label>
-                        </div>
-                        <div class="sidepanel__input">
-                            <input required class="sidepanel__input-field" name="sidepanel_tel" type="tel"
-                                id="sidepanel_tel">
-                            <label for="sidepanel_tel">телефон</label>
-                        </div>
-                        <div class="sidepanel__input">
-                            <input required class="sidepanel__input-field" name="sidepanel_email" type="email"
-                                id="sidepanel_email">
-                            <label for="contacts_email">e-mail</label>
-                        </div>
-                        <div class="sidepanel__input">
-                            <input class="sidepanel__input-field" type="text" name="question" id="question">
-                            <label for="question">вопрос</label>
-                        </div>
-                        <button class="sidepanel__btn">Отправить</button>
-                    </form>
-
-                    <div class="sidepanel__info">
-                        <div class="sidepanel__info-item">
-                            <div class="sidepanel__info-type">Телефон:</div>
-                            <div class="sidepanel__info-text">+7 999 999 99 99</div>
-                        </div>
-                        <div class="sidepanel__info-item">
-                            <div class="sidepanel__info-type">E-mail:</div>
-                            <div class="sidepanel__info-text">design_g@mail.ru</div>
-                        </div>
-                        <div class="sidepanel__info-item">
-                            <div class="sidepanel__info-type">Cоц-сети:</div>
-                            <div class="sidepanel__info-socials">
-                                <a href="#"><img src="icons/social/img.svg" alt="img"></a>
-                                <a href="#"><img src="icons/social/vk.svg" alt="vk"></a>
-                            </div>
+                <form action="#" class="sidepanel__form">
+                    <div class="sidepanel__input">
+                        <input required class="sidepanel__input-field" name="sidepanel_name" type="text"
+                            id="sidepanel_name">
+                        <label for="sidepanel_name">фио</label>
+                    </div>
+                    <div class="sidepanel__input">
+                        <input required class="sidepanel__input-field" name="sidepanel_tel" type="tel"
+                            id="sidepanel_tel">
+                        <label for="sidepanel_tel">телефон</label>
+                    </div>
+                    <div class="sidepanel__input">
+                        <input required class="sidepanel__input-field" name="sidepanel_email" type="email"
+                            id="sidepanel_email">
+                        <label for="contacts_email">e-mail</label>
+                    </div>
+                    <div class="sidepanel__input">
+                        <input class="sidepanel__input-field" type="text" name="question" id="question">
+                        <label for="question">вопрос</label>
+                    </div>
+                    <button class="sidepanel__btn">Отправить</button>
+                </form>
+    
+                <div class="sidepanel__info">
+                    <div class="sidepanel__info-item">
+                        <div class="sidepanel__info-type">Телефон:</div>
+                        <div class="sidepanel__info-text">+7 999 999 99 99</div>
+                    </div>
+                    <div class="sidepanel__info-item">
+                        <div class="sidepanel__info-type">E-mail:</div>
+                        <div class="sidepanel__info-text">info@qualis.ru</div>
+                    </div>
+                    <div class="sidepanel__info-item">
+                        <div class="sidepanel__info-type">Cоц-сети:</div>
+                        <div class="sidepanel__info-socials">
+                            <a href="#"><img src="icons/social/img.svg" alt="img"></a>
+                            <a href="#"><img src="icons/social/vk.svg" alt="vk"></a>
                         </div>
                     </div>
                 </div>
+                <img class="sidepanel__arrow" src="icons/left-arrow.svg" alt="arrow">
             </div>
-            <img src="icons/left-arrow.svg" alt="open" class="sidepanel__arrow">
-        </aside>
+        </div>
+
+        
         <div class="menu__overlay"></div>
     </div>
+    
 
     <section class="promo">
         <div class="container">
@@ -130,7 +134,17 @@
                         </div>
                     </div>
                     <div class="about__quote">
-                        Lorem ipsum dolor sit amet.
+                        <div class="about__quote-wrapper">
+                            <div class="about__quote-text">
+                                “Каждый клиент важен. Так же, как и каждая его проблема, которую мы должны решить”
+                            </div>
+                            <div class="about__quote-author">
+                                Ген. директор
+                            </div>
+                        </div>
+                        <div class="about__quote-img">
+                            <img src="img/girl.png" alt="photo">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -220,39 +234,39 @@
             <div class="title title-black">
                 почему нас выбирают?
             </div>
-            <div class="advantages__wrapper">
-                <div class="advantages__card">
+            <div class="card__wrapper">
+                <div class="card">
                     <img src="icons/team.svg" alt="team">
-                    <div class="title title-black advantages__card-title">команда</div>
-                    <div class="advantages__card-subtitle">
+                    <div class="title title-black title title-black card__title">команда</div>
+                    <div class="card__subtitle">
                         Мы любим нашу работу!
                     </div>
-                    <div class="advantages__card-descr">
+                    <div class="card__descr">
                         Каждый заказ и каждый клиент для нас важны.
                     </div>
-                    <button class="advantages__card-btn">Узнать больше</button>
+                    <button class="card__btn">Узнать больше</button>
                 </div>
-                <div class="advantages__card">
+                <div class="card">
                     <img src="icons/speed.svg" alt="speed">
-                    <div class="title title-black advantages__card-title">скорость</div>
-                    <div class="advantages__card-subtitle">
+                    <div class="title title-black title title-black card__title">скорость</div>
+                    <div class="card__subtitle">
                         Мы быстрые!
                     </div>
-                    <div class="advantages__card-descr">
+                    <div class="card__descr">
                         Большой опыт работы с сайтами позволяет нашей команде работать быстро и слаженно.
                     </div>
-                    <button class="advantages__card-btn">Узнать больше</button>
+                    <button class="card__btn">Узнать больше</button>
                 </div>
-                <div class="advantages__card">
+                <div class="card">
                     <img src="icons/price.svg" alt="price">
-                    <div class="title title-black advantages__card-title">цена</div>
-                    <div class="advantages__card-subtitle">
+                    <div class="title title-black title title-black card__title">цена</div>
+                    <div class="card__subtitle">
                         У нас не дорого!
                     </div>
-                    <div class="advantages__card-descr">
+                    <div class="card__descr">
                         Наш клиент всегда точно знает, что он не переплатит за свой заказ лишних денег.
                     </div>
-                    <button class="advantages__card-btn">Узнать больше</button>
+                    <button class="card__btn">Узнать больше</button>
                 </div>
             </div>
         </div>
@@ -261,46 +275,52 @@
     <section class="services">
         <div class="container">
             <div class="title__line services__title">услуги</div>
-            <div class="services__wrapper">
-                <div class="services__card">
+            <div class="card__wrapper">
+                <div class="card">
                     <img src="icons/services/web.svg" alt="web">
-                    <div class="services__card-title">WEB-ДИЗАЙН</div>
-                    <div class="services__card-descr">
+                    <div class="title title-black card__title">WEB-ДИЗАЙН</div>
+                    <div class="card__descr">
                         Сайт, который будет продавать. Разработка дизайна под ключ.
                     </div>
-                    <button class="services__card-btn">Заказать</button>
+                    <button class="card__btn">Заказать</button>
                 </div>
-                <div class="services__card">
+                <div class="card">
                     <img src="icons/services/landing.svg" alt="landing">
-                    <div class="services__card-title">лендинг</div>
-                    <div class="services__card-descr">
-                        Одностраничный сайт-презентация. Создаётся с целью довести клиента до покупки.
+                    <div class="title title-black card__title">лендинг</div>
+                    <div class="card__subtitle">
+                        Одностраничный сайт-презентация.
                     </div>
-                    <button class="services__card-btn">Заказать</button>
+                    <div class="card__descr">
+                        Создаётся с целью довести клиента до покупки.
+                    </div>
+                    <button class="card__btn">Заказать</button>
                 </div>
-                <div class="services__card">
+                <div class="card">
                     <img src="icons/services/card.svg" alt="design">
-                    <div class="services__card-title">сайт-визитка</div>
-                    <div class="services__card-descr">
-                        Небольшой по объёму сайт. Содержит базовую информацию о компании.
+                    <div class="title title-black card__title">сайт-визитка</div>
+                    <div class="card__subtitle">
+                        Небольшой по объёму сайт.
                     </div>
-                    <button class="services__card-btn">Заказать</button>
+                    <div class="card__descr">
+                        Содержит базовую информацию о компании.
+                    </div>
+                    <button class="card__btn">Заказать</button>
                 </div>
-                <div class="services__card">
+                <div class="card">
                     <img src="icons/services/onlinestore.svg" alt="design">
-                    <div class="services__card-title">сайт-магазин</div>
-                    <div class="services__card-descr">
+                    <div class="title title-black card__title">сайт-магазин</div>
+                    <div class="card__descr">
                         Функциональный и удобный интернет-магазин.
                     </div>
-                    <button class="services__card-btn">Заказать</button>
+                    <button class="card__btn">Заказать</button>
                 </div>
-                <div class="services__card">
+                <div class="card">
                     <img src="icons/services/corporate.svg" alt="design">
-                    <div class="services__card-title">корпоративный сайт</div>
-                    <div class="services__card-descr">
+                    <div class="title title-black card__title">корпоративный сайт</div>
+                    <div class="card__descr">
                         Вникаем в суть бизнеса, анализируем потребности вашей целевой аудитории.
                     </div>
-                    <button class="services__card-btn">Заказать</button>
+                    <button class="card__btn">Заказать</button>
                 </div>
             </div>
         </div>
@@ -318,11 +338,15 @@
         <div class="container">
             <div class="title__line request__title">ОСТАВИТЬ ЗАЯВКУ</div>
             <form action="#" class="request__form">
-                <input required placeholder="Ваше имя" name="name" type="text" id="name">
-                <input required placeholder="Телефон" name="tel" type="tel" id="tel">
-                <input required placeholder="E-Mail" name="email" type="email" id="email">
-                <input placeholder="Описание проблематики" type="text" name="descr" id="descr">
+                <input class="request__input" required placeholder="Ваше имя" name="name" type="text" id="name">
+                <input class="request__input" required placeholder="Телефон" name="tel" type="tel" id="tel">
+                <input class="request__input" required placeholder="E-Mail" name="email" type="email" id="email">
+                <input class="request__input" placeholder="Описание проблематики" type="text" name="descr" id="descr">
                 <button class="request__btn">Отправить</button>
+                <div class="request__policy">
+                    <input required type="checkbox">
+                    <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
+                </div>
             </form>
         </div>
     </section>
@@ -361,7 +385,7 @@
                     </div>
                     <div class="contacts__info-item">
                         <div class="contacts__info-type">E-mail:</div>
-                        <div class="contacts__info-text">design_g@mail.ru</div>
+                        <div class="contacts__info-text">info@qualis.ru</div>
                     </div>
                     <div class="contacts__info-item">
                         <div class="contacts__info-type">Cоц-сети:</div>
@@ -380,16 +404,17 @@
             <div class="footer__wrapper">
                 <div class="footer__about">
                     <div class="footer__logo">qualis</div>
-                    <div class="footer__text footer__copy">2020 © Сайт Агентства Design Group</div>
-                    <div class="footer__text footer__copy-descr">Использование материалов сайта с разрешения
-                        правообладателя</div>
-                    <a class="footer__text footer__policy">Политика конфиденциальности</a>
-                    <div class="footer__text footer__company-info">ООО “Design Group” ИНН:0000000000</div>
+                    <div class="footer__text">
+                        <div>2020 © Сайт Агентства Design Group</div>
+                        <div>Использование материалов сайта с разрешения правообладателя</div>
+                        <a class="footer__policy">Политика конфиденциальности</a>
+                        <div>ООО “Design Group” ИНН:0000000000</div>
+                    </div>
                 </div>
                 <div class="footer__contacts">
-                    <div class="footer__contacts-item">+7 999 999 99 99</div>
-                    <div class="footer__contacts-item">design.g@mail.ru</div>
-                    <div class="footer__contacts-item">
+                    <div>+7 999 999 99 99</div>
+                    <div>info@qualis.ru</div>
+                    <div>
                         <a href="#"><img src="icons/social/img.svg" alt="img"></a>
                         <a href="#"><img src="icons/social/vk.svg" alt="vk"></a>
                     </div>

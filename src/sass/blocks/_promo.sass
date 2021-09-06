@@ -12,8 +12,14 @@
         text-transform: uppercase
         color: #FFF
     &__header
+        position: relative
         display: flex
         justify-content: space-between
+        z-index: 210
+        &.active
+            position: fixed
+            width: 1170px
+            top: 70px
     &__title
         margin-top: 100px
         margin-bottom: 140px

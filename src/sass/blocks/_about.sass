@@ -4,6 +4,7 @@
 	padding-top: 70px
 	z-index: 10
 	color: #fff
+
 	&_bg
 		position: absolute
 		width: 100%
@@ -11,9 +12,11 @@
 		top: 0
 		right: 0
 		height: 1014px
+
 	&__title
 		text-align: left
 		line-height: 73px
+
 	&__wrapper
 		display: grid
 		grid-template: auto / repeat(auto-fit, 470px)
@@ -30,9 +33,16 @@
 			span
 				color: $main-color
 				font-style: normal
+
+	&__info 
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-end
 	&__text
 		font-size: 28px
 		line-height: 47px
+
 	&__experience
 		display: grid
 		grid-template: 145px 130px / 300px 170px
@@ -49,11 +59,34 @@
 			background-color: $main-color
 			box-shadow: 0px 0px 27px $main-color
 			border-radius: 10px
-			padding-left: 9px
-			line-height: 275px
+			text-align: center
+			line-height: 330px
+			height: 100%
+			width: 100%	
 		&-descr
 			font-size: 39px
 			line-height: 51px
+
+	&__quote
+		display: flex
+		width: 370px
+		column-gap: 13px
+		&-wrapper
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			align-items: flex-end
+			font-weight: 300
+			font-size: 14px
+			line-height: 15px
+			letter-spacing: 0.14em
+			padding-top: 10px
+		&-img img
+			width: 70px
+			height: 70px
+			border-radius: 100% 
+			object-fit: cover
+
 	&__img
 		display: block
 		margin: 0 auto
@@ -64,6 +97,7 @@
 			width: 100%
 			height: 100%
 			object-fit: cover
+
 	&__descr
 		display: block
 		word-wrap: break-word
@@ -71,6 +105,7 @@
 		margin-top: 30px
 		font-size: 29px
 		line-height: 52px
+
 	&__persons
 		display: grid
 		grid-template: auto / repeat(auto-fit, 375px)
