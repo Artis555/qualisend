@@ -3,4 +3,52 @@
     padding: 95px 0 70px 0
     font-size: 18px
     font-weight: 300
-    
+    &__wrapper
+        display: grid
+        grid-template: 370px / repeat(3, 370px)
+        grid-auto-rows: 370px
+        justify-content: center
+        gap: 30px
+        margin-top: 80px
+    &__item
+        text-align: center
+        color: #fff
+    &__title
+        font-weight: bold
+        font-size: 32px
+        margin-top: 32px
+        line-height: 32px
+    &__subtitle
+        font-size: 20px
+        margin-top: 17px
+        line-height: 25px
+        &__wrapper
+        display: grid
+        grid-template: auto / repeat(auto-fit, 270px)
+        gap: 60px
+        justify-content: space-between
+        margin-top: 50px
+
+    &__title
+        font-size: 24px
+        line-height: 100%
+        margin-top: 20px
+    &__subtitle
+        text-align: left
+        margin-top: 30px
+        line-height: 21px
+    &__descr
+        text-align: left
+        margin-top: 20px
+        line-height: 21px
+    &__btn
+        position: absolute
+        width: 177px
+        height: 31px
+        bottom: 17px
+        left: 50%
+        transform: translateX(-50%)
+        background: #fff
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border: none
+        border-radius: 41px

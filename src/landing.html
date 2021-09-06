@@ -10,13 +10,15 @@
 </head>
 <body>
     <section class="promo">
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="container">
-            <a href="#" class="logo">qualis</a>
+            <div class="promo__header">
+                <a href="#" class="logo">qualis</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <div class="promo-services__title-logo">
                 <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50.75 0H7.25C5.32718 0 3.48311 0.763837 2.12348 2.12348C0.763837 3.48311 0 5.32718 0 7.25V50.75C0 52.6728 0.763837 54.5169 2.12348 55.8765C3.48311 57.2362 5.32718 58 7.25 58H50.75C52.6728 58 54.5169 57.2362 55.8765 55.8765C57.2362 54.5169 58 52.6728 58 50.75V7.25C58 5.32718 57.2362 3.48311 55.8765 2.12348C54.5169 0.763837 52.6728 0 50.75 0ZM32.625 50.75H7.25V25.375H32.625V50.75ZM50.75 50.75H39.875V25.375H50.75V50.75ZM50.75 18.125H7.25V7.25H50.75V18.125Z" fill="#fff"/>
@@ -24,48 +26,50 @@
             </div>
             <div class="title promo-services__title">РЕДИЗАЙН САЙТА</div>
             <div class="promo-services__subtitle">Мы обновим ваш сайт и сделаем его удобным</div>
-            <button href="#" class="button button_main">оставить заявку</button>
+            <a href="#request">
+                <button href="#" class="button button_main">оставить заявку</button>
+            </a>
         </div>
     </section>
 
     <section class="advantages">
         <div class="container">
-            <div class="title title_black">
+            <div class="title title-black">
                 почему нас выбирают?
             </div>
-            <div class="advantages__wrapper">
-                <div class="advantages__card">
+            <div class="card__wrapper">
+                <div class="card">
                     <img src="icons/team.svg" alt="team">
-                    <div class="title title_black advantages__card-title">команда</div>
-                    <div class="advantages__card-subtitle">
+                    <div class="title title-black title title-black card__title">команда</div>
+                    <div class="card__subtitle">
                         Мы любим нашу работу!
                     </div>
-                    <div class="advantages__card-descr">
+                    <div class="card__descr">
                         Каждый заказ и каждый клиент для нас важны.
                     </div>
-                    <button class="advantages__card-btn">Узнать больше</button>
+                    <button class="card__btn">Узнать больше</button>
                 </div>
-                <div class="advantages__card">
+                <div class="card">
                     <img src="icons/speed.svg" alt="speed">
-                    <div class="title title_black advantages__card-title">скорость</div>
-                    <div class="advantages__card-subtitle">
+                    <div class="title title-black title title-black card__title">скорость</div>
+                    <div class="card__subtitle">
                         Мы быстрые!
                     </div>
-                    <div class="advantages__card-descr">
-                        Большой опыт работы с сайтами позволяет нашей команде работать быстро и слаженно. 
+                    <div class="card__descr">
+                        Большой опыт работы с сайтами позволяет нашей команде работать быстро и слаженно.
                     </div>
-                    <button class="advantages__card-btn">Узнать больше</button>
+                    <button class="card__btn">Узнать больше</button>
                 </div>
-                <div class="advantages__card">
+                <div class="card">
                     <img src="icons/price.svg" alt="price">
-                    <div class="title title_black advantages__card-title">цена</div>
-                    <div class="advantages__card-subtitle">
+                    <div class="title title-black title title-black card__title">цена</div>
+                    <div class="card__subtitle">
                         У нас не дорого!
                     </div>
-                    <div class="advantages__card-descr">
+                    <div class="card__descr">
                         Наш клиент всегда точно знает, что он не переплатит за свой заказ лишних денег.
                     </div>
-                    <button class="advantages__card-btn">Узнать больше</button>
+                    <button class="card__btn">Узнать больше</button>
                 </div>
             </div>
         </div>
@@ -161,22 +165,26 @@
         </div>
     </section>
 
-    <section class="request">
+    <section class="request" id="request">
         <div class="container">
             <div class="title__line request__title">ОСТАВИТЬ ЗАЯВКУ</div>
             <form action="#" class="request__form">
-                <input required placeholder="Ваше имя" name="name" type="text" id="name">
-                <input required placeholder="Телефон" name="tel" type="tel" id="tel">
-                <input required placeholder="E-Mail" name="email" type="email" id="email">
-                <input placeholder="Описание проблематики" type="text" name="descr" id="descr">
+                <input class="request__input" required placeholder="Ваше имя" name="name" type="text" id="name">
+                <input class="request__input" required placeholder="Телефон" name="tel" type="tel" id="tel">
+                <input class="request__input" required placeholder="E-Mail" name="email" type="email" id="email">
+                <input class="request__input" placeholder="Описание проблематики" type="text" name="descr" id="descr">
                 <button class="request__btn">Отправить</button>
+                <div class="request__policy">
+                    <input required type="checkbox">
+                    <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
+                </div>
             </form>
         </div>
     </section>
 
     <section class="work">
         <div class="container">
-            <h1 class="title title_black">КАК СТРОИТСЯ РАБОТА</h1>
+            <h1 class="title title_black title title-black">КАК СТРОИТСЯ РАБОТА</h1>
             <div class="work__wrapper">
                 <div class="work__item">
                     <div class="work__number">01</div>
@@ -252,46 +260,50 @@
         <div class="container">
             <div class="title title__line contacts__title">ПОЯВИЛИСЬ ВОПРОСЫ?</div>
             <div class="contacts__subtitle">свяжитесь с нами!</div>
-            <form action="#" class="contacts__form">
-                <div class="contacts__input">
-                    <input required class="contacts__input-field" name="contacts_name" type="text" id="contacts_name">
-                    <label for="contacts_name">фио</label>
-                </div>
-                <div class="contacts__input">
-                    <input required class="contacts__input-field" name="contacts_tel" type="tel" id="contacts_tel">
-                    <label for="contacts_tel">телефон</label>
-                </div>
-                <div class="contacts__input">
-                    <input required class="contacts__input-field" name="contacts_email" type="email" id="contacts_email">
-                    <label for="contacts_email">e-mail</label>
-                </div>
-                <div class="contacts__input">
-                    <input class="contacts__input-field" type="text" name="question" id="question">
-                    <label for="question">вопрос</label>
-                </div>
-                <button class="contacts__btn">Отправить</button>
-            </form>
+            <div class="contacts__wrapper">
+                <form action="#" class="contacts__form">
+                    <div class="contacts__input">
+                        <input required class="contacts__input-field" name="contacts_name" type="text"
+                            id="contacts_name">
+                        <label for="contacts_name">фио</label>
+                    </div>
+                    <div class="contacts__input">
+                        <input required class="contacts__input-field" name="contacts_tel" type="tel" id="contacts_tel">
+                        <label for="contacts_tel">телефон</label>
+                    </div>
+                    <div class="contacts__input">
+                        <input required class="contacts__input-field" name="contacts_email" type="email"
+                            id="contacts_email">
+                        <label for="contacts_email">e-mail</label>
+                    </div>
+                    <div class="contacts__input">
+                        <input class="contacts__input-field" type="text" name="question" id="question">
+                        <label for="question">вопрос</label>
+                    </div>
+                    <button class="contacts__btn">Отправить</button>
+                </form>
 
-            <div class="contacts__info">
-                <div class="contacts__info-item">
-                    <div class="contacts__info-type">Телефон:</div>
-                    <div class="contacts__info-text">+7 999 999 99 99</div>
-                </div>
-                <div class="contacts__info-item">
-                    <div class="contacts__info-type">E-mail:</div>
-                    <div class="contacts__info-text">design_g@mail.ru</div>
-                </div>
-                <div class="contacts__info-item">
-                    <div class="contacts__info-type">Cоц-сети:</div>
-                    <div class="contacts__info-socials">
-                        <a href="#"><img src="icons/social/img.svg" alt="img"></a>
-                        <a href="#"><img src="icons/social/vk.svg" alt="vk"></a>
+                <div class="contacts__info">
+                    <div class="contacts__info-item">
+                        <div class="contacts__info-type">Телефон:</div>
+                        <div class="contacts__info-text">+7 999 999 99 99</div>
+                    </div>
+                    <div class="contacts__info-item">
+                        <div class="contacts__info-type">E-mail:</div>
+                        <div class="contacts__info-text">info@qualis.ru</div>
+                    </div>
+                    <div class="contacts__info-item">
+                        <div class="contacts__info-type">Cоц-сети:</div>
+                        <div class="contacts__info-socials">
+                            <a href="#"><img src="icons/social/img.svg" alt="img"></a>
+                            <a href="#"><img src="icons/social/vk.svg" alt="vk"></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
