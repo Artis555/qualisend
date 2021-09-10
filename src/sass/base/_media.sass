@@ -1,6 +1,95 @@
 @media (max-width: 1200px)
     .promo
-        
-// @media (max-width: 991px)
-// @media (max-width: 767px)
+        padding: 60px
+    .about
+        padding: 50px
+        &__wrapper
+            grid-template: auto / repeat(auto-fit, 430px)
+    .achievements
+        padding: 40px
+        &__wrapper
+            display: grid
+            grid-template: repeat(3,80px)/repeat(auto-fit,420px)
+    .advantages
+        padding: 40px
+    .card
+        &__wrapper
+            grid-template: auto / repeat(auto-fit, 270px)
+            gap: 20px
+    .services
+        padding: 40px
+        &__title
+            &:before
+                width: 331px
+                left: 60px
+            &:after
+                width: 331px
+                left: 520px
+    .portfolio
+        &__title
+            &:before
+                width: 331px
+                left: 50px
+            &:after
+                width: 331px
+                left: 610px
+    .request
+        &__title
+            &:before
+                width: 300px
+                left: 40px
+            &:after
+                width: 300px
+                left: 650px
+    .contacts
+        &__title
+            &:before
+                width: 290px
+                left: 20px
+            &:after
+                width: 290px
+                left: 670px
+@media (max-width: 991px)
+    .promo
+        &__title
+            font-size: 50px
+    .about
+        &__text
+            text-align: center
+        &__title
+            text-align: center
+    .services
+        &__title
+            &:before
+                width: 231px
+                left: 60px
+            &:after
+                width: 231px
+                left: 480px
+    .portfolio
+            
+        &__title
+            &:before
+                width: 231px
+                left: 50px
+            &:after
+                width: 231px
+                left: 480px
+    .request
+        &__title
+            &:before
+                width: 220px
+                left: 20px
+            &:after
+                width: 220px
+                left: 520px
+    .contacts
+        &__title
+            &:before
+                width: 200px
+                left: 13px
+            &:after
+                width: 200px
+                left: 550px
+    // @media (max-width: 767px)
 // @media (max-width: 595px)
