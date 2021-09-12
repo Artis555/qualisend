@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+        
+
     // slider functions
     btnPrev.addEventListener('click', () => {
         if (position / movePosition == 0) {
