@@ -6,6 +6,7 @@
         &__wrapper
             grid-template: auto / repeat(auto-fit, 430px)
     .achievements
+        background: url('../img/bg/2.jpg') bottom -200px (center/cover) no-repeat
         padding: 40px
         &__wrapper
             display: grid
@@ -64,6 +65,7 @@
         &__quote
             margin-top: 20px
             width: 475px
+        
     .advantages 
         .card__wrapper
             justify-content: center
@@ -72,6 +74,9 @@
         &__wrapper
             grid-template: repeat(3,80px)/repeat(auto-fit,480px)
             justify-content: center
+    .card
+        &__wrapper
+            justify-content: space-around
     .services
         &__title
             &:before
@@ -159,8 +164,10 @@
     .hamburger
         height: 34px
     .hamburger span
-        width: 44px
-        
+        width: 44px 
+    .card
+        &__title
+            letter-spacing: 0
     .title
         line-height: 40px
         font-size: 28px
@@ -211,6 +218,8 @@
             
     .advantages .card__wrapper
         grid-template: auto/240px
+    .services 
+        padding: 20px
     .portfolio 
         padding-bottom: 100px
         .slider
