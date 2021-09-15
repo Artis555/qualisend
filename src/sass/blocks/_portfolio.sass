@@ -17,12 +17,17 @@
     overflow: hidden
     margin: 0 auto
     margin-top: 55px
+    transition: 0.5s all
     &__container
-        display: grid
-        grid-template: repeat(2, 250px) / repeat(5, 300px)
-        grid-auto-columns: 300px
+        position: relative
+        display: flex
         gap: 30px
-        transition: all 0.5s
+        transition: 0.5s transform
+        left: -330px
+    &__column
+        display: grid
+        grid-template: repeat(2, 250px) / 300px
+        gap: 30px
     &__item 
         img
             width: 100%

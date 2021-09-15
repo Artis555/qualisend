@@ -18,11 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //slider
     let sliderContainer = document.querySelector('.slider__container');
-    let position = 0;
-    let movePosition = 330;
     let btnPrev = document.querySelector('.slider__prev');
     let btnNext = document.querySelector('.slider__next');
     let countSlides = document.querySelectorAll('.slider__item').length / 2;
+    let columns = [];
+    let column = 0;
+    let movePosition = 330;
+    let position = -movePosition;
+    let offset = 0;
 
 
     // menu functions
@@ -66,29 +69,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-        
 
     // slider functions
-    btnPrev.addEventListener('click', () => {
-        if (position / movePosition == 0) {
-            position = -(movePosition * (countSlides - 3));
-        } else {
-            position += movePosition;
-        }
-        sliderContainer.style.cssText = `
-            transform: translateX(${position}px);
-        `;
-
-    });
-
-    btnNext.addEventListener('click', () => {
-        if (position <= -(movePosition * (countSlides - 3))) {
-            position = 0;
-        } else {
+    function sliderInit() {
+        // init columns array
+        document.querySelectorAll('.slider__column').forEach(item => {
+            columns.push(item.cloneNode(true));
+        });
+        
+        // init prev button
+        btnPrev.addEventListener('click', () => {
+            column--;
+            if (column < 0) {
+                column = columns.length - 1;
+            }
+            sliderContainer.lastChild.remove();
+            offset += movePosition;
+            sliderContainer.prepend(columns[column]);
             position -= movePosition;
-        }
-        sliderContainer.style.cssText = `
-            transform: translateX(${position}px);
-        `;
-    });
+            sliderContainer.style.cssText = `
+                left: ${position}px;
+                transform: translateX(${offset}px);
+            `;
+        });
+
+        // init next button
+        btnNext.addEventListener('click', () => {
+            sliderContainer.firstChild.remove();
+            sliderContainer.append(columns[column]);
+            console.log(columns.length);
+            offset -= movePosition;
+            position += movePosition;
+            sliderContainer.style.cssText = `
+                left: ${position}px;
+                transform: translateX(${offset}px);
+            `;
+            column++;
+            if (column >= columns.length) {
+                column = 0;
+            }
+        });
+    }
+
+    sliderInit();
 });
