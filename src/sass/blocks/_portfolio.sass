@@ -4,43 +4,41 @@
     &__title
         &::before
             width: 305px
-            height: 4px
-            
             background-color: #343434
         &::after
             width: 305px
-            height: 4px
-            
             background-color: #343434
-.slider
-    width: 970px
-    overflow: hidden
-    margin: 0 auto
-    margin-top: 55px
-    transition: 0.5s all
-    &__container
-        position: relative
-        display: flex
-        gap: 30px
-        transition: 0.5s transform
-        left: -330px
-    &__column
-        display: grid
-        grid-template: repeat(2, 250px) / 300px
-        gap: 30px
-    &__item 
-        img
-            width: 100%
-            height: 100%
-            object-fit: cover
-    &__prev 
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        left: 0
-    &__next
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        right: 0
+    .slider
+        width: 960px
+        overflow: hidden
+        margin: 0 auto
+        margin-top: 55px
+        &__container
+            position: relative
+            display: flex
+            gap: 30px
+            left: -330px
+        &__column
+            display: grid
+            grid-template: repeat(2, 250px) / 300px
+            gap: 30px
+            transition: 0.2s transform
+        &__item 
+            cursor: pointer
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        &__prev 
+            cursor: pointer
+            position: absolute
+            top: 50%
+            transform: translateY(50%)
+            left: 0
+        &__next
+            cursor: pointer
+            position: absolute
+            top: 50%
+            transform: translateY(50%)
+            right: 0
 

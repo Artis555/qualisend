@@ -27,9 +27,14 @@
         &__title
             &:before
                 width: 331px
-                
             &:after
                 width: 331px
+        .slider
+            width: 630px
+            &__next 
+                right: 70px
+            &__prev
+                left: 70px
     .request
         &__title
             &:before
@@ -74,13 +79,17 @@
             &:after
                 width: 231px
     .portfolio
-            
         &__title
             &:before
                 width: 231px
                 
             &:after
                 width: 231px
+        .slider
+            &__next
+                right: 25px
+            &__prev
+                left: 25px
     .request
         padding: 40px
         &__form
@@ -115,6 +124,13 @@
     .card
         &__wrapper
             justify-content: center
+    .portfolio 
+        .slider
+            width: 300px
+            &__next 
+                right: 70px
+            &__prev
+                left: 70px
     .request
         &__form
             grid-template: auto/repeat(2,250px)
@@ -195,6 +211,18 @@
             
     .advantages .card__wrapper
         grid-template: auto/240px
+    .portfolio 
+        padding-bottom: 100px
+        .slider
+            width: 300px
+            &__column
+                row-gap: 20px
+            &__next 
+                right: 90px
+                bottom: -340px
+            &__prev
+                left: 90px
+                bottom: -340px
     .request
         padding: 20px
         &__form
