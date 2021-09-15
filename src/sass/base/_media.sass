@@ -139,23 +139,41 @@
         &__wrapper
             justify-content: space-around
         a.logo
-            font-size: 28px
+            font-size: 24px
+    .hamburger
+        height: 34px
     .hamburger span
-        width: 49px
+        width: 44px
+        
     .title
         line-height: 40px
-        font-size: 20px
+        font-size: 28px
     .button
         width: 220px
         font-size: 17px
     .about
         padding: 20px
-        &__experience
-            grid-template: 145px 130px/150px 170px 
-            &-years
-                font-size: 70px
+        &__quote
+            margin-top: 30px
+            width: 100%
+        &__persons
             &-descr
-                font-size: 26px
+                margin-top: 20px
+                line-height: 34px
+        &__experience
+            grid-template: 110px 110px/160px 120px 
+            &-count
+                line-height: 250px
+                font-size: 200px
+            &-years
+                font-size: 46px
+            &-descr
+                font-size: 24px
+        &__text
+            margin-top: 20px
+            line-height: 34px
+        &__descr
+            line-height: 34px
         &__img
             height: 370px
         &__title
@@ -177,8 +195,6 @@
             
     .advantages .card__wrapper
         grid-template: auto/240px
-    .services .card__wrapper
-        grid-template: auto/240px
     .request
         padding: 20px
         &__form
@@ -188,7 +204,7 @@
         &__wrapper
             grid-template: auto/100%
         &__info
-            flex-direction: row
+            flex-direction: column
             &-item
                 font-size: 21px
                 &:before
