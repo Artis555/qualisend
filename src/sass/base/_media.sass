@@ -51,7 +51,7 @@
             text-align: center
         &__wrapper
             gap: 30px
-            grid-template: auto/repeat(auto-fit,700px)
+            grid-template: auto/100%
         &__info
             align-items: center
         &__img
@@ -109,6 +109,7 @@
         &__title
             font-size: 40px
     .about
+        
         &__info
             align-items: flex-start
     .card
@@ -128,36 +129,89 @@
             font-size: 20px
 @media (max-width: 595px)
     .promo
-        padding: 45px   
+        padding: 20px
+        padding-top: 70px   
+        &__btn
+            width: 100%
         &__title
+            margin-top: 120px
             font-size: 17px
         &__wrapper
-            justify-content: center
+            justify-content: space-around
         a.logo
-            font-size: 28px
+            font-size: 24px
+    .hamburger
+        height: 34px
+    .hamburger span
+        width: 44px
+        
     .title
+        line-height: 40px
         font-size: 28px
-    .hamburger 
-        display: none
     .button
         width: 220px
         font-size: 17px
     .about
+        padding: 20px
+        &__quote
+            margin-top: 30px
+            width: 100%
+        &__persons
+            &-descr
+                margin-top: 20px
+                line-height: 34px
+        &__experience
+            grid-template: 110px 110px/160px 120px 
+            &-count
+                line-height: 250px
+                font-size: 200px
+            &-years
+                font-size: 46px
+            &-descr
+                font-size: 24px
+        &__text
+            margin-top: 20px
+            line-height: 34px
+        &__descr
+            line-height: 34px
         &__img
             height: 370px
         &__title
             font-size: 28px
             text-align: center
+    .achievements
+        padding: 20px
+        &__wrapper
+            gap: 35px
+            grid-auto-rows: auto
+            grid-template: auto/100%
+    .achievement   
+        flex-direction: column
+        align-items: center
+        &__descr
+            margin-bottom: 20px
+            width: 100%
+            text-align: center
+            
     .advantages .card__wrapper
         grid-template: auto/240px
-    .services .card__wrapper
-        grid-template: auto/240px
     .request
+        padding: 20px
         &__form
-            grid-template: auto/repeat(1,240px)
+            grid-template: auto/100%
     .contacts
+        padding: 20px
         &__wrapper
-            grid-template: auto/repeat(1,230px)
+            grid-template: auto/100%
+        &__info
+            flex-direction: column
+            &-item
+                font-size: 21px
+                &:before
+                    left: -19px
+                    top: 10px
+            &-socials
+                a
     .footer
         &__about
             width: 100%
