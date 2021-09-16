@@ -60,6 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const pageUp =  document.querySelector('.pageup');
+    pageUp.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    })
+
+    
 
     //slider
     let btnPrev = document.querySelector('.slider__prev');
