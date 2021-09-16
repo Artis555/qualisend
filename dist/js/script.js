@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isSidepanelOpen = !isSidepanelOpen;
         });
     });
-<<<<<<< HEAD
 
     // slider functions
     btnPrev.addEventListener('click', () => {
@@ -91,7 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     });
 });
-=======
-});
-
->>>>>>> ed393779f2f396ec5c6a48927d64df665ee688ab
