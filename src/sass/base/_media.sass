@@ -1,6 +1,270 @@
 @media (max-width: 1200px)
     .promo
+        padding: 60px
+    .about
+        padding: 50px
+        &__wrapper
+            grid-template: auto / repeat(auto-fit, 430px)
+    .achievements
+        background: url('../img/bg/2.jpg') bottom -200px (center/cover) no-repeat
+        padding: 40px
+        &__wrapper
+            display: grid
+            grid-template: repeat(3,80px)/repeat(auto-fit,420px)
+    .advantages
+        padding: 40px
+    .card
+        &__wrapper
+            grid-template: auto / repeat(auto-fit, 270px)
+            gap: 20px
+    .services
+        padding: 40px
+        &__title
+            &:before
+                width: 331px
+            &:after
+                width: 331px
+    .portfolio
+        &__title
+            &:before
+                width: 331px
+            &:after
+                width: 331px
+        .slider
+            width: 630px
+            &__next 
+                right: 70px
+            &__prev
+                left: 70px
+    .request
+        &__title
+            &:before
+                width: 300px
+            &:after
+                width: 300px
+    .contacts
+        &__title
+            &:before
+                width: 290px
+            &:after
+                width: 290px
+@media (max-width: 991px)
+    .promo
+        &__title
+            font-size: 50px
+    .about
+        &__title
+            text-align: center
+        &__wrapper
+            gap: 30px
+            grid-template: auto/100%
+        &__info
+            align-items: center
+        &__img
+            margin-top: 100px
+        &__quote
+            margin-top: 20px
+            width: 475px
         
-// @media (max-width: 991px)
-// @media (max-width: 767px)
-// @media (max-width: 595px)
+    .advantages 
+        .card__wrapper
+            justify-content: center
+            grid-template: auto/300px
+    .achievements
+        &__wrapper
+            grid-template: repeat(3,80px)/repeat(auto-fit,480px)
+            justify-content: center
+    .card
+        &__wrapper
+            justify-content: space-around
+    .services
+        &__title
+            &:before
+                width: 231px
+            &:after
+                width: 231px
+    .portfolio
+        &__title
+            &:before
+                width: 231px
+                
+            &:after
+                width: 231px
+        .slider
+            &__next
+                right: 25px
+            &__prev
+                left: 25px
+    .request
+        padding: 40px
+        &__form
+            grid-template: auto/repeat(2,270px)
+            row-gap: 30px
+            &__input.request__input
+                width: 100%
+        &__title
+            &:before
+                width: 220px
+            &:after
+                width: 220px
+    .contacts
+        padding: 40px
+        &__wrapper
+            grid-template: auto/repeat(2,270px)
+        &__title
+            &:before
+                width: 200px
+            &:after
+                width: 200px
+    .footer
+        padding: 40px
+@media (max-width: 767px)
+    .promo
+        &__title
+            font-size: 40px
+    .about
+        &__info
+            align-items: flex-start
+    .card
+        &__wrapper
+            justify-content: center
+    .portfolio 
+        &__title
+            &:before
+                width: 160px
+                
+            &:after
+                width: 160px
+        .slider
+            width: 300px
+            &__next 
+                right: 70px
+            &__prev
+                left: 70px
+    .request
+        &__form
+            grid-template: auto/repeat(2,250px)
+            row-gap: 30px
+    .contacts
+        &__wrapper
+            grid-template: auto/repeat(2,220px)
+    .footer
+        &__logo
+            font-size: 49px
+        &__contacts
+            font-size: 20px
+@media (max-width: 595px)
+    .promo
+        padding: 20px
+        padding-top: 70px   
+        &__btn
+            width: 100%
+        &__title
+            margin-top: 120px
+            font-size: 17px
+        &__wrapper
+            justify-content: space-around
+        a.logo
+            font-size: 24px
+    .hamburger
+        height: 34px
+    .hamburger span
+        width: 44px 
+    .card
+        &__title
+            letter-spacing: 0
+    .title
+        line-height: 40px
+        font-size: 28px
+    .button
+        width: 220px
+        font-size: 17px
+    .about
+        padding: 20px
+        &__quote
+            margin-top: 30px
+            width: 100%
+        &__persons
+            &-descr
+                margin-top: 20px
+                line-height: 34px
+        &__experience
+            grid-template: 110px 110px/160px 120px 
+            &-count
+                line-height: 250px
+                font-size: 200px
+            &-years
+                font-size: 46px
+            &-descr
+                font-size: 24px
+        &__text
+            margin-top: 20px
+            line-height: 34px
+        &__descr
+            line-height: 34px
+        &__img
+            height: 370px
+        &__title
+            font-size: 28px
+            text-align: center
+    .achievements
+        padding: 20px
+        &__wrapper
+            gap: 35px
+            grid-auto-rows: auto
+            grid-template: auto/100%
+    .achievement   
+        flex-direction: column
+        align-items: center
+        &__descr
+            margin-bottom: 20px
+            width: 100%
+            text-align: center
+            
+    .advantages .card__wrapper
+        grid-template: auto/240px
+    .services 
+        padding: 20px
+    .portfolio 
+        padding-bottom: 100px
+        &__title
+            &:before
+                width: 60px
+                
+            &:after
+                width: 60px
+        .slider
+            width: 300px
+            &__column
+                row-gap: 20px
+            &__next 
+                right: 90px
+                bottom: -340px
+            &__prev
+                left: 90px
+                bottom: -340px
+    .request
+        padding: 20px
+        &__form
+            grid-template: auto/100%
+    .contacts
+        padding: 20px
+        &__wrapper
+            grid-template: auto/100%
+        &__info
+            flex-direction: column
+            &-item
+                font-size: 21px
+                &:before
+                    left: -19px
+                    top: 10px
+            &-socials
+                a
+    .footer
+        &__about
+            width: 100%
+        &__logo
+            font-size: 30px
+            
+        &__wrapper
+            flex-direction: column

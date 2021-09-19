@@ -10,6 +10,14 @@
 	"strict": false,
 	"browser": true,
 	"devel": true,
+	"eqeqeq": true,
+	"immed" : true,
+	"latedef" : true,
 	"jquery": true,
+	"newcap" : true,
+	"noempty" : true,
+	"plusplus" : true,
+	"asi" : false,
+	"funcscope" : false,
     "node": true
 }

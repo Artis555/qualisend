@@ -1,0 +1,17 @@
+.pageup
+    position: fixed
+    bottom: 40px
+    right: 40px
+    width: 50px
+    height: 40px
+    z-index: 20000
+    transition: all .5s
+    &-none
+        display: none
+    &-active
+        display: block
+    &-hidden
+        opacity: 0
+    svg
+        path
+            transition: .3s all

@@ -16,13 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isMenuOpen = false;
     let isSidepanelOpen = false;
 
-    //slider
-    let sliderContainer = document.querySelector('.slider__container');
-    let position = 0;
-    let movePosition = 330;
-    let btnPrev = document.querySelector('.slider__prev');
-    let btnNext = document.querySelector('.slider__next');
-    let countSlides = document.querySelectorAll('.slider__item').length / 2;
+
 
 
     // menu functions
@@ -66,27 +60,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // slider functions
-    btnPrev.addEventListener('click', () => {
-        if (position / movePosition == 0) {
-            position = -(movePosition * (countSlides - 3));
-        } else {
-            position += movePosition;
-        }
-        sliderContainer.style.cssText = `
-            transform: translateX(${position}px);
-        `;
-
+    const pageup = document.querySelector('.pageup');
+    pageup.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
 
-    btnNext.addEventListener('click', () => {
-        if (position <= -(movePosition * (countSlides - 3))) {
-            position = 0;
-        } else {
-            position -= movePosition;
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 1200 && pageup.classList.contains('pageup-none')) {
+            pageup.classList.remove('pageup-none');
+            pageup.classList.add('pageup-active');
+            setTimeout(function () {
+                pageup.classList.remove('pageup-hidden');
+            }, 500);
         }
-        sliderContainer.style.cssText = `
-            transform: translateX(${position}px);
-        `;
+        else if (window.scrollY < 1200 && pageup.classList.contains('pageup-active')) {
+            pageup.classList.add('pageup-hidden');
+            setTimeout(function () {
+                pageup.classList.add('pageup-none');
+                pageup.classList.remove('pageup-active');
+            }, 500);
+        }
+        const advantages = document.querySelector(".advantages"),
+            portfolio = document.querySelector(".portfolio");
+        if ((window.scrollY > advantages.offsetTop - 300 && window.scrollY < advantages.offsetTop + 200) || (window.scrollY > portfolio.offsetTop - 300 && window.scrollY < portfolio.offsetTop + 200)) {
+            pageup.querySelector("svg path").style.fill = "#000";
+        } else {
+            pageup.querySelector("svg path").style.fill = "#fff";
+        }
     });
+
+    //slider
+    let btnPrev = document.querySelector('.slider__prev');
+    let btnNext = document.querySelector('.slider__next');
+    let columns = [];
+    let positions = new Map();
+    let movePosition = 330;
+
+    function sliderInit() {
+        // init columns array and map with positons
+        document.querySelectorAll('.slider__column').forEach(item => {
+            columns.push(item);
+            positions.set(item, 0);
+        });
+
+        // init next button
+        btnNext.addEventListener('click', () => {
+            for (let i = 0; i < columns.length - 1; i++) {
+                positions.set(columns[i], positions.get(columns[i]) + movePosition);
+                columns[i].style.cssText = `
+                    visibility: visible;
+                    transform: translateX(${positions.get(columns[i])}px);
+                `;
+            }
+            positions.set(columns[columns.length - 1], positions.get(columns[columns.length - 1]) - 4 * movePosition);
+            columns[columns.length - 1].style.cssText = `
+                visibility: hidden;
+                transform: translateX(${positions.get(columns[columns.length - 1])}px);
+            `;
+            columns.unshift(columns.pop());
+        });
+
+        // init prev button
+        btnPrev.addEventListener('click', () => {
+            for (let i = 1; i < columns.length; i++) {
+                positions.set(columns[i], positions.get(columns[i]) - movePosition);
+                columns[i].style.cssText = `
+                    visibility: visible;
+                    transform: translateX(${positions.get(columns[i])}px);
+                `;
+            }
+            positions.set(columns[0], positions.get(columns[0]) + 4 * movePosition);
+            columns[0].style.cssText = `
+                visibility: hidden;
+                transform: translateX(${positions.get(columns[0])}px);
+            `;
+            columns.push(columns.shift());
+        });
+    }
+
+    sliderInit();
 });
