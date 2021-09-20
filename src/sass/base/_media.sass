@@ -1,12 +1,15 @@
 @media (max-width: 1200px)
     .promo
+        min-height: 0
         padding: 60px
+        &__wrapper
+
     .about
         padding: 50px
         &__wrapper
             grid-template: auto / repeat(auto-fit, 430px)
     .achievements
-        background: url('../img/bg/2.jpg') bottom -200px (center/cover) no-repeat
+        background: url('../img/bg/2.jpg') bottom (center/cover) no-repeat
         padding: 40px
         &__wrapper
             display: grid
@@ -32,7 +35,7 @@
                 width: 331px
         .slider
             width: 630px
-            &__next 
+            &__next
                 right: 70px
             &__prev
                 left: 70px
@@ -65,8 +68,8 @@
         &__quote
             margin-top: 20px
             width: 475px
-        
-    .advantages 
+
+    .advantages
         .card__wrapper
             justify-content: center
             grid-template: auto/300px
@@ -87,7 +90,7 @@
         &__title
             &:before
                 width: 231px
-                
+
             &:after
                 width: 231px
         .slider
@@ -122,22 +125,27 @@
     .promo
         &__title
             font-size: 40px
+    .sidepanel
+        display: none
     .about
         &__info
             align-items: flex-start
+    .menu
+        &__link
+            font-size: 28px
     .card
         &__wrapper
             justify-content: center
-    .portfolio 
+    .portfolio
         &__title
             &:before
                 width: 160px
-                
+
             &:after
                 width: 160px
         .slider
             width: 300px
-            &__next 
+            &__next
                 right: 70px
             &__prev
                 left: 70px
@@ -156,9 +164,10 @@
 @media (max-width: 595px)
     .promo
         padding: 20px
-        padding-top: 70px   
+        padding-top: 70px
         &__btn
-            width: 100%
+            width: 270px
+            margin-bottom: 30px
         &__title
             margin-top: 120px
             font-size: 17px
@@ -166,10 +175,13 @@
             justify-content: space-around
         a.logo
             font-size: 24px
+    .menu
+        &__links
+            grid-template: auto/300px
     .hamburger
         height: 34px
     .hamburger span
-        width: 44px 
+        width: 44px
     .card
         &__title
             letter-spacing: 0
@@ -189,7 +201,7 @@
                 margin-top: 20px
                 line-height: 34px
         &__experience
-            grid-template: 110px 110px/160px 120px 
+            grid-template: 110px 110px/160px 120px
             &-count
                 line-height: 250px
                 font-size: 200px
@@ -213,31 +225,35 @@
             gap: 35px
             grid-auto-rows: auto
             grid-template: auto/100%
-    .achievement   
+    .achievement
         flex-direction: column
         align-items: center
         &__descr
             margin-bottom: 20px
             width: 100%
             text-align: center
-            
-    .advantages .card__wrapper
-        grid-template: auto/240px
-    .services 
+    .advantages
         padding: 20px
-    .portfolio 
+    .advantages .card__wrapper
+        grid-template: auto/260px
+    .services
+        padding: 20px
+        &__title
+            &:before,  &:after
+                width: 82px
+    .portfolio
         padding-bottom: 100px
         &__title
             &:before
                 width: 60px
-                
+
             &:after
                 width: 60px
         .slider
             width: 300px
             &__column
                 row-gap: 20px
-            &__next 
+            &__next
                 right: 90px
                 bottom: -340px
             &__prev
@@ -245,10 +261,16 @@
                 bottom: -340px
     .request
         padding: 20px
+        &__title
+            &:before,  &:after
+                width: 20px
         &__form
             grid-template: auto/100%
     .contacts
         padding: 20px
+        &__title
+            &:before,  &:after
+                width: 60px
         &__wrapper
             grid-template: auto/100%
         &__info
@@ -261,10 +283,35 @@
             &-socials
                 a
     .footer
+        padding: 20px
         &__about
             width: 100%
         &__logo
             font-size: 30px
-            
+
         &__wrapper
+            padding: 0
             flex-direction: column
+    .stocks
+        padding: 20px
+        a.logo
+            font-size: 24px
+        &__info
+            grid-template: auto/repeat(1,auto)
+        &__wrapper
+            grid-template: auto/repeat(1,1fr)
+        &__descr
+            margin-top: 20px
+        &__input
+            margin-bottom: 60px
+            label
+                font-size: 20px
+        &__btn
+            font-size: 20px
+            border-bottom: 3px solid rgba(14,18,21,.4)
+    .offer
+        padding: 20px
+        &__wrapper
+            grid-template: auto/repeat(1,280px)
+    .advantages-services
+        padding: 20px

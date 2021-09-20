@@ -4,15 +4,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // menu
-    let hamburger = document.querySelector('.hamburger');
-    let menu = document.querySelector('.menu');
-    let menuLinks = document.querySelectorAll('.menu__links');
-    let overlay = document.querySelector('.menu__overlay');
-    let header = document.querySelector('.promo__wrapper');
-    let sidepanel = document.querySelector('.sidepanel');
-    let sidepanelInfo = document.querySelector('.sidepanel__block');
-    let sidepanelArrow = document.querySelectorAll('.sidepanel__arrow');
-    let sidepanelText = document.querySelector('.sidepanel__text');
+    const hamburger = document.querySelector('.hamburger'),
+        menu = document.querySelector('.menu'),
+        menuLinks = document.querySelectorAll('.menu__links'),
+        overlay = document.querySelector('.menu__overlay'),
+        header = document.querySelector('.promo__header'),
+        sidepanel = document.querySelector('.sidepanel'),
+        sidepanelInfo = document.querySelector('.sidepanel__block'),
+        sidepanelArrow = document.querySelectorAll('.sidepanel__arrow'),
+        sidepanelText = document.querySelector('.sidepanel__text');
     let isMenuOpen = false;
     let isSidepanelOpen = false;
 
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             menu.classList.remove('active');
             sidepanel.classList.remove('active');
-            header.classList.remove('active');
             overlay.classList.remove('active');
             isMenuOpen = !isMenuOpen;
         });
@@ -36,11 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
             sidepanel.classList.add('active');
             header.classList.add('active');
             overlay.classList.add('active');
+            hamburger.classList.add('active');
         } else {
             menu.classList.remove('active');
             sidepanel.classList.remove('active');
             header.classList.remove('active');
             overlay.classList.remove('active');
+            hamburger.classList.remove('active');
         }
         isMenuOpen = !isMenuOpen;
     });
