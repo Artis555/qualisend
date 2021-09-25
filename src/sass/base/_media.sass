@@ -41,8 +41,19 @@
     .offer
         padding: 40px
         &__wrapper
-            
             gap: 20px
+    .advantages-services
+        padding: 40px
+    .work
+        padding: 40px
+        &__wrapper
+            grid-template: auto/repeat(auto-fit,290px)
+            gap: 10px
+    .examples
+        padding: 30px
+        &__wrapper
+            justify-content: space-around
+        
 @media (max-width: 991px)
     .promo
         &__title
@@ -99,6 +110,11 @@
     .stocks
         &__info 
             gap: 20px
+    .work
+        &__wrapper
+            grid-template: auto/repeat(auto-fit,290px)
+            gap: 30px
+            justify-content: center
 @media (max-width: 767px)
     .promo
         &__title
