@@ -31,8 +31,7 @@
     margin-top: 100px
     z-index: 1000
     &.active
-        display: flex
-        justify-content: space-between
+        display: block
         opacity: 1
         .menu__wrapper
             transition: all 0.6s
@@ -42,20 +41,25 @@
         z-index: 1000
     &__links
         display: grid
-        grid-template: repeat(4, 44px) / 300px 300px
+        justify-content: space-between
+        grid-template: repeat(4, 44px) / repeat(auto-fit, minmax(300px,auto))
         row-gap: 30px
     &__link
         color: rgba(255, 255, 255, 0.4)
         font-weight: bold
         font-size: 43px
+        text-align: center
         text-transform: uppercase
         letter-spacing: 0.15em
         &:hover
             color: #fff
             text-decoration: none
+        &:last-child
+            grid-column: 2/3
     &__socials
         position: relative
-        z-index: 201
+        z-index: 1000
+        margin: 0 auto
         margin-top: 150px
         width: 150px
         display: flex
@@ -78,138 +82,3 @@
         z-index: 199
         &.active
             display: block
-.sidepanel
-    opacity: 0
-    transition: all 0.6s
-    z-index: 1000
-    display: flex
-    width: 200px
-    &.active
-        opacity: 1
-    &__text
-        transform: rotate(90deg) translateX(100%)
-        text-align: center
-        color: #fff
-        &.active
-            display: none
-    &__title
-        &:before,&:after
-            width: 97px
-            top: 5px
-    &__subtitle
-        font-weight: bold
-        font-size: 24px
-        letter-spacing: 0.055em
-    &__arrow
-        margin-top: 20px
-        cursor: pointer
-    &__block
-        display: none
-        position: absolute
-        padding: 96px 20px
-        flex-direction: column
-        justify-content: space-around
-        top: 0
-        right: -100%
-        width: 485px
-        height: 100vh
-        background: rgba(25, 25, 25, 0.7)
-        opacity: 0
-        visibility: hidden
-        transition: all 0.8s
-        z-index: 220
-        &.active
-            display: flex
-            right: 0
-            visibility: visible
-            opacity: 1
-        &-title
-            font-size: 24px
-            letter-spacing: 0.055em
-            line-height: 24px
-        .sidepanel__arrow
-            position: absolute
-            left: -70px
-            top: 50%
-            transform: translateY(-50%) rotate(270deg)
-    &__form
-        display: flex
-        flex-direction: column
-        align-items: flex-end
-        margin: 0 auto
-        width: 370px
-    &__input
-        position: relative
-        margin-bottom: 40px
-        &:nth-child(4)
-            margin-bottom: 20px
-        &-field
-            background: none
-            border: none
-            border-bottom: 1px solid #FFFFFF
-            height: 32px
-            width: 370px
-            outline: none
-            color: #fff
-            padding-left: 10px
-            &:focus
-                &+label
-                    transform: translateY(-1.5rem)
-        label
-            position: absolute
-            left: 18px
-            bottom: 5px
-            text-transform: uppercase
-            color: rgba(255, 255, 255, 0.4)
-            font-size: 14px
-            font-weight: 200
-            margin: 0
-            transition: 0.3s all
-            &::before
-                position: absolute
-                content: ''
-                width: 8px
-                height: 2px
-                background: #A7A7A7
-                top: 65%
-                left: -15px
-    &__btn
-        font-size: 11px
-        text-align: center
-        text-transform: uppercase
-        color: rgba(255, 255, 255, 0.4)
-        font-weight: bold
-        width: 70px
-        background: none
-        border: none
-        border-bottom: 3px solid rgba(255, 255, 255, 0.4)
-        outline: none
-        margin-top: 20px
-    &__info
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-        color: #a7a7a7
-        font-weight: 200
-        font-size: 18px
-        height: 235px
-        &-socials
-
-            #vk
-                width: 22px
-                height: 22px
-            #inst
-                width: 22px
-                height: 22px
-        &-item
-            margin-left: 28px
-            position: relative
-            &:before
-                position: absolute
-                left: -28px
-                top: 50%
-                transform: translateY(50%)
-                content: ''
-                width: 12px
-                height: 2px
-                background: #A7A7A7

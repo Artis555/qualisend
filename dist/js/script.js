@@ -8,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menu = document.querySelector('.menu'),
         menuLinks = document.querySelectorAll('.menu__links'),
         overlay = document.querySelector('.menu__overlay'),
-        header = document.querySelector('.promo__header'),
-        sidepanel = document.querySelector('.sidepanel'),
-        sidepanelInfo = document.querySelector('.sidepanel__block'),
-        sidepanelArrow = document.querySelectorAll('.sidepanel__arrow'),
-        sidepanelText = document.querySelector('.sidepanel__text');
+        header = document.querySelector('.promo__header');
     let isMenuOpen = false;
     let isSidepanelOpen = false;
 
@@ -23,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuLinks.forEach(item => {
         item.addEventListener('click', () => {
             menu.classList.remove('active');
-            sidepanel.classList.remove('active');
             overlay.classList.remove('active');
             isMenuOpen = !isMenuOpen;
         });
@@ -32,34 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         if (!isMenuOpen) {
             menu.classList.add('active');
-            sidepanel.classList.add('active');
             header.classList.add('active');
             overlay.classList.add('active');
             hamburger.classList.add('active');
+            disableScroll();
         } else {
             menu.classList.remove('active');
-            sidepanel.classList.remove('active');
             header.classList.remove('active');
             overlay.classList.remove('active');
             hamburger.classList.remove('active');
+            enableScroll();
         }
         isMenuOpen = !isMenuOpen;
     });
 
-    sidepanelArrow.forEach(item => {
-        item.addEventListener('click', () => {
-            if (!isSidepanelOpen) {
-                sidepanelInfo.classList.add('active');
-                sidepanelText.classList.add('active');
-                hamburger.style.display = 'none';
-            } else {
-                sidepanelInfo.classList.remove('active');
-                sidepanelText.classList.remove('active');
-                hamburger.style.display = 'flex';
-            }
-            isSidepanelOpen = !isSidepanelOpen;
-        });
-    });
+
 
     const pageup = document.querySelector('.pageup');
     pageup.addEventListener('click', (e) => {
@@ -88,13 +70,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const advantages = document.querySelector(".advantages"),
             portfolio = document.querySelector(".portfolio");
-        if ((window.scrollY > advantages.offsetTop - 300 && window.scrollY < advantages.offsetTop + 200) || (window.scrollY > portfolio.offsetTop - 300 && window.scrollY < portfolio.offsetTop + 200)) {
+        if ((window.scrollY > getCoords(advantages) - getComputedStyle(advantages).height)) {
             pageup.querySelector("svg path").style.fill = "#000";
         } else {
             pageup.querySelector("svg path").style.fill = "#fff";
         }
+
+
     });
 
+    function getCoords(elem) { // crossbrowser version
+        var box = elem.getBoundingClientRect();
+
+        var body = document.body;
+        var docEl = document.documentElement;
+
+        var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+        var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+        var clientTop = docEl.clientTop || body.clientTop || 0;
+        var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+        var top = box.top + scrollTop - clientTop;
+        var left = box.left + scrollLeft - clientLeft;
+
+        return Math.round(top);
+    }
     //slider
     let btnPrev = document.querySelector('.slider__prev');
     let btnNext = document.querySelector('.slider__next');
@@ -146,3 +147,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sliderInit();
 });
+
+var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch (e) { }
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
