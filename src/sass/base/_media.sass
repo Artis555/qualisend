@@ -22,7 +22,7 @@
             gap: 20px
     .services
         padding: 40px
-        
+
     .portfolio
         .slider
             width: 630px
@@ -53,7 +53,9 @@
         padding: 30px
         &__wrapper
             justify-content: space-around
-        
+    .offer
+        &__wrapper
+            grid-template: auto/minmax(470px,auto) 400px
 @media (max-width: 991px)
     .promo
         &__title
@@ -84,9 +86,9 @@
         &__wrapper
             justify-content: space-around
     .services
-        
+
     .portfolio
-        
+
         .slider
             &__next
                 right: 25px
@@ -99,23 +101,30 @@
             row-gap: 30px
             &__input.request__input
                 width: 100%
-        
+
     .contacts
         padding: 40px
         &__wrapper
             grid-template: auto/repeat(2,270px)
-        
+
     .footer
         padding: 40px
     .stocks
-        &__info 
+        &__info
             gap: 20px
     .work
+        margin-top: 0
         &__wrapper
+            margin-top: 50px
             grid-template: auto/repeat(auto-fit,290px)
             gap: 30px
             justify-content: center
+    .offer
+        &__wrapper
+            grid-template: auto/1fr
 @media (max-width: 767px)
+    .title
+        letter-spacing: 0.05em
     .promo
         &__title
             font-size: 40px
@@ -131,7 +140,7 @@
         &__wrapper
             justify-content: center
     .portfolio
-        
+
         .slider
             width: 300px
             &__next
@@ -152,12 +161,11 @@
             font-size: 20px
     .stocks
         padding: 20px
-        &__info 
+        &__info
             grid-template: auto/repeat(1,auto)
             gap: 20px
     .promo-services__title
         font-size: 50px
-    
 
 @media (max-width: 595px)
     .promo
@@ -186,10 +194,10 @@
         &__line
             &::before, &::after
                 display: none
-                
+
     .card
         &__wrapper
-            margin-top: 25px    
+            margin-top: 25px
         &__title
             font-size: 24px
             letter-spacing: 0
@@ -243,7 +251,7 @@
         grid-template: auto/260px
     .services
         padding: 20px
-        
+
     .portfolio
         padding: 20px
         padding-bottom: 100px
@@ -260,13 +268,13 @@
                 bottom: -340px
     .request
         padding: 20px
-        
+
         &__form
             grid-template: auto/100%
             margin-top: 25px
     .contacts
         padding: 20px
-        
+
         &__wrapper
             grid-template: auto/100%
             margin-top: 5px
@@ -309,14 +317,14 @@
             margin-top: 20px
     .offer
         padding: 20px
-        &__wrapper
-            grid-template: auto/repeat(1,280px)
-            justify-content: center
         &__title
             text-align: center
+    .work
+        &__wrapper
+            margin-top: 30px
     .advantages-services
         padding: 20px
-    .advantages-services__wrapper 
+    .advantages-services__wrapper
         grid-template-rows: 360px
         grid-template-columns: repeat(auto-fit, 300px)
     .promo-services__title-logo
@@ -325,7 +333,7 @@
     .promo-services__title
         margin-top: 10px
     .promo-services__subtitle
-        font-size: 20px 
+        font-size: 20px
         &__wrapper
             justify-content: center
     .examples

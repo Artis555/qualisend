@@ -70,7 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const advantages = document.querySelector(".advantages"),
             portfolio = document.querySelector(".portfolio");
-        if ((window.scrollY > getCoords(advantages) - getComputedStyle(advantages).height)) {
+        const advantagesCoordsTop = getOffsetTop(advantages);
+        const advantagesTop = advantagesCoordsTop - parseInt(getComputedStyle(advantages).height);
+        const portfolioCoordsTop = getCoords(portfolio);
+        const portfolioTop = portfolioCoordsTop - parseInt(getComputedStyle(portfolio).height);
+        if ((window.scrollY > advantagesTop && window.scrollY < advantagesCoordsTop) || (window.scrollY > portfolioTop && window.scrollY < portfolioCoordsTop)) {
             pageup.querySelector("svg path").style.fill = "#000";
         } else {
             pageup.querySelector("svg path").style.fill = "#fff";
@@ -79,21 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    const getOffsetTop = element => {
+        let offsetTop = 0;
+        while (element) {
+            offsetTop += element.offsetTop;
+            element = element.offsetParent;
+        }
+        return offsetTop;
+    }
+
     function getCoords(elem) { // crossbrowser version
-        var box = elem.getBoundingClientRect();
+        const box = elem.getBoundingClientRect();
 
-        var body = document.body;
-        var docEl = document.documentElement;
-
-        var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-        var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
-
-        var clientTop = docEl.clientTop || body.clientTop || 0;
-        var clientLeft = docEl.clientLeft || body.clientLeft || 0;
-
-        var top = box.top + scrollTop - clientTop;
-        var left = box.left + scrollLeft - clientLeft;
-
+        const body = document.body;
+        const docEl = document.documentElement;
+        const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+        const clientTop = docEl.clientTop || body.clientTop || 0;
+        const top = box.top + scrollTop - clientTop;
         return Math.round(top);
     }
     //slider
