@@ -1,4 +1,10 @@
 @media (max-width: 1200px)
+    .menu
+        &__links
+            justify-content: space-around
+        &__link
+            &:last-child
+                grid-column: auto
     .promo
         min-height: 0
         padding: 60px
@@ -55,6 +61,10 @@
             justify-content: space-around
         
 @media (max-width: 991px)
+    .menu
+        &__link
+            font-size: 40px
+            line-height: 40px
     .promo
         &__title
             font-size: 50px
@@ -115,6 +125,7 @@
             grid-template: auto/repeat(auto-fit,290px)
             gap: 30px
             justify-content: center
+            
 @media (max-width: 767px)
     .promo
         &__title
@@ -124,9 +135,6 @@
     .about
         &__info
             align-items: flex-start
-    .menu
-        &__link
-            font-size: 28px
     .card
         &__wrapper
             justify-content: center
@@ -160,6 +168,12 @@
     
 
 @media (max-width: 595px)
+    .menu
+        &__links
+            gap: 25px
+        &__link
+            font-size: 35px
+            line-height: 35px
     .promo
         padding: 20px
         padding-top: 70px
@@ -173,13 +187,16 @@
             justify-content: space-around
         a.logo
             font-size: 24px
-    .menu
-        &__links
-            grid-template: auto/300px
     .hamburger
         height: 34px
-    .hamburger span
-        width: 44px
+        span
+            width: 44px
+        &.active
+            span
+                &:nth-child(1)
+                    transform: translateY(17px) rotate(-45deg)
+                &:nth-child(2)
+                    transform: translateY(-15px) rotate(45deg)
     .title
         line-height: 40px
         font-size: 29px

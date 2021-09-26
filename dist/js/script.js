@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // menu
     const hamburger = document.querySelector('.hamburger'),
         menu = document.querySelector('.menu'),
-        menuLinks = document.querySelectorAll('.menu__links'),
+        menuLinks = document.querySelectorAll('.menu__link'),
         overlay = document.querySelector('.menu__overlay'),
         header = document.querySelector('.promo__header');
     let isMenuOpen = false;
@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             menu.classList.remove('active');
             overlay.classList.remove('active');
+            hamburger.classList.remove('active');
             isMenuOpen = !isMenuOpen;
+            enableScroll();
         });
     });
 
