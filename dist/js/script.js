@@ -195,3 +195,34 @@ function enableScroll() {
     window.removeEventListener('touchmove', preventDefault, wheelOpt);
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
+
+// animate
+const animItems = document.querySelectorAll('.anim__item');
+window.addEventListener('scroll', animate);
+
+function animate() {
+    animItems.forEach((item) => {
+        const itemHeight = item.offsetHeight;
+        const itemOffset = offset(item);
+        const animStart = 4;
+        let itemPoint;
+    
+        if (itemHeight > window.innerHeight) {
+            itemPoint = window.innerHeight - window.innerHeight / animStart;
+        } else {
+            itemPoint = window.innerHeight - itemHeight / animStart;
+        }
+    
+        if ((window.pageYOffset > itemOffset - itemPoint) && window.pageYOffset < itemOffset + itemHeight) {
+            item.classList.add('anim-active');
+        } 
+    });
+}
+
+animate();
+
+function offset(e) {
+    const rect = e.getBoundingClientRect(),
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return rect.top + scrollTop;
+}
