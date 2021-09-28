@@ -226,3 +226,11 @@ function offset(e) {
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return rect.top + scrollTop;
 }
+
+// card 
+const cards = document.querySelectorAll('.anim-card');
+cards.forEach((item) => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('card-flipped');
+    });
+});
