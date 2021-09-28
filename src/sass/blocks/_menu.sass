@@ -34,12 +34,11 @@
         display: block
         opacity: 1
         .menu__wrapper
-            transition: all 0.6s
+            transition: all .6s
             transform: translateX(0%)
     &__wrapper
         transform: translateX(-100%)
         z-index: 1000
-        
     &__link
         color: rgba(255, 255, 255, 0.4)
         font-weight: bold
@@ -50,8 +49,6 @@
         &:hover
             color: #fff
             text-decoration: none
-        &:last-child
-            grid-column: 2/3
     &__socials
         position: relative
         z-index: 1000
@@ -78,29 +75,33 @@
         z-index: 199
         &.active
             display: block
-
-.link-effect
-    display: grid
-    justify-content: space-between
-    grid-template: auto / repeat(auto-fit, minmax(300px,auto))
-    row-gap: 30px
-	a 
-		padding: 10px 0
-		margin: 0 20px
-		color: #616161
-		text-shadow: none
-		position: relative
-		&::before 
-			position: absolute
-			top: 0
-			left: 0
-			overflow: hidden
-			padding: 10px 0
-			max-width: 0
-			border-bottom: 2px solid #fff
-			color: #ffffff
-			content: attr(data-hover)
-			transition: max-width 0.5s
-		&:hover
-			&::before
-				max-width: 100%
+    &__links
+        display: grid
+        justify-content: space-between
+        grid-template: auto / repeat(auto-fit, minmax(300px, auto))
+        row-gap: 30px
+        font-size: 50px
+        text-transform: uppercase
+        text-align: center
+        a
+            position: relative
+            padding: 10px 0
+            margin: 0 20px
+            color: #616161
+            text-shadow: none
+            text-decoration: none
+            &:before
+                position: absolute
+                top: 0
+                overflow: hidden
+                padding: 10px 0
+                max-width: 0
+                border-bottom: 2px solid #fff
+                color: #fff
+                content: attr(data-hover)
+                transition: all 0.7s
+            &:hover 
+                &:before
+                    max-width: 100%
+            &:last-child
+                grid-column: 2/3
