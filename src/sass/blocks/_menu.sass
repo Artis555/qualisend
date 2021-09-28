@@ -39,11 +39,7 @@
     &__wrapper
         transform: translateX(-100%)
         z-index: 1000
-    &__links
-        display: grid
-        justify-content: space-between
-        grid-template: auto / repeat(auto-fit, minmax(300px,auto))
-        row-gap: 30px
+        
     &__link
         color: rgba(255, 255, 255, 0.4)
         font-weight: bold
@@ -82,3 +78,29 @@
         z-index: 199
         &.active
             display: block
+
+.link-effect
+    display: grid
+    justify-content: space-between
+    grid-template: auto / repeat(auto-fit, minmax(300px,auto))
+    row-gap: 30px
+	a 
+		padding: 10px 0
+		margin: 0 20px
+		color: #616161
+		text-shadow: none
+		position: relative
+		&::before 
+			position: absolute
+			top: 0
+			left: 0
+			overflow: hidden
+			padding: 10px 0
+			max-width: 0
+			border-bottom: 2px solid #fff
+			color: #ffffff
+			content: attr(data-hover)
+			transition: max-width 0.5s
+		&:hover
+			&::before
+				max-width: 100%
