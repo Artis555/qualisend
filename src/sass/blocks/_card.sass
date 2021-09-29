@@ -15,6 +15,7 @@
         padding: 17px 24px 24px 17px
         color: #343434
         background: #fff
+        cursor: pointer
         &--back 
             background: lightgray
             transform: rotateY(180deg)
@@ -39,6 +40,9 @@
         color: #343434
         background: #fff
         text-decoration: none
+        transition: .7s all
+        &:hover
+            transform: translate(15px, -15px)
     &__title
         font-size: 24px
         line-height: 100%

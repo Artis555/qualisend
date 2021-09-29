@@ -55,17 +55,22 @@
                 top: 65%
                 left: -15px
     &__btn
-        font-size: 11px
+        font-size: 12px
         text-align: center
         text-transform: uppercase
         color: rgba(255, 255, 255, 0.4)
+        letter-spacing: 1px
         font-weight: bold
-        width: 70px
+        width: 80px
         background: none
         border: none
         border-bottom: 3px solid rgba(255, 255, 255, 0.4)
         outline: none
         margin-top: 20px
+        transition: .7s all
+        &:hover
+            color: #fff
+            border-bottom: 3px solid rgba(255, 255, 255, 0.787)
     &__info
         display: flex
         flex-direction: column
@@ -76,8 +81,13 @@
         height: 235px
         &-socials
             img
-                width: 18px
-                margin-right: 10px
+                width: 20px
+                margin-right: 20px
+                a
+                transition: .6s all
+                &:hover
+                    
+                    transform: translateY(-5px)
         &-item
             margin-left: 28px
             position: relative

@@ -227,6 +227,15 @@ function offset(e) {
     return rect.top + scrollTop;
 }
 
+
+
+
+
+
+
+
+
+
 // card 
 const cards = document.querySelectorAll('.anim-card');
 cards.forEach((item) => {
