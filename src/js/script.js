@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // menu
     const hamburger = document.querySelector('.hamburger'),
         menu = document.querySelector('.menu'),
-        menuLinks = document.querySelectorAll('.menu__link'),
+        menuLinks = document.querySelectorAll('.menu__links'),
         overlay = document.querySelector('.menu__overlay'),
         header = document.querySelector('.promo__header');
     let isMenuOpen = false;
@@ -197,7 +197,9 @@ function enableScroll() {
 }
 
 // animate
-const animItems = document.querySelectorAll('.anim__item');
+const animItems = document.querySelectorAll('.anim__item'),
+        animLeft = document.querySelectorAll('.anim__left'),
+        animRight = document.querySelectorAll('.anim__right');
 window.addEventListener('scroll', animate);
 
 function animate() {
@@ -206,6 +208,7 @@ function animate() {
         const itemOffset = offset(item);
         const animStart = 4;
         let itemPoint;
+
     
         if (itemHeight > window.innerHeight) {
             itemPoint = window.innerHeight - window.innerHeight / animStart;
@@ -227,7 +230,42 @@ function offset(e) {
     return rect.top + scrollTop;
 }
 
+    animLeft.forEach((item) => {
+        const itemHeight = item.offsetHeight;
+        const itemOffset = offset(item);
+        const animStart = 4;
+        let itemPoint;
 
+    
+        if (itemHeight > window.innerHeight) {
+            itemPoint = window.innerHeight - window.innerHeight / animStart;
+        } else {
+            itemPoint = window.innerHeight - itemHeight / animStart;
+        }
+    
+        if ((window.pageYOffset > itemOffset - itemPoint) && window.pageYOffset < itemOffset + itemHeight) {
+            item.classList.add('anim-active');
+        } 
+    });
+
+
+    animRight.forEach((item) => {
+        const itemHeight = item.offsetHeight;
+        const itemOffset = offset(item);
+        const animStart = 4;
+        let itemPoint;
+
+
+    if (itemHeight > window.innerHeight) {
+        itemPoint = window.innerHeight - window.innerHeight / animStart;
+    } else {
+        itemPoint = window.innerHeight - itemHeight / animStart;
+    }
+
+    if ((window.pageYOffset > itemOffset - itemPoint) && window.pageYOffset < itemOffset + itemHeight) {
+        item.classList.add('anim-active');
+    } 
+});
 
 
 
