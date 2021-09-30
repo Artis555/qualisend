@@ -2,14 +2,12 @@
     .menu
         &__links
             justify-content: space-around
-        &__link
-            &:last-child
-                grid-column: auto
+        &__links
+            a
+                &:last-child
+                    grid-column: auto
     .promo
-        min-height: 0
         padding: 60px
-        &__wrapper
-
     .about
         padding: 50px
         &__wrapper
@@ -67,6 +65,8 @@
         &__link
             font-size: 40px
             line-height: 40px
+        &__socials
+            margin-top: 100px
     .promo
         &__title
             font-size: 50px
@@ -177,18 +177,32 @@
 @media (max-width: 595px)
     .menu
         &__links
-            gap: 25px
+            gap: 10px
+            padding: 20px
+            a
+                font-size: 30px
         &__link
             font-size: 35px
             line-height: 35px
+        &__socials
+            margin-top: 0
+            justify-content: center
+            gap: 40px
+            a
+                svg
+                    width: 22px
+                    height: 22px
     .promo
+        min-height: 0
         padding: 20px
-        padding-top: 70px
+        padding-top: 50px
         &__btn
-            width: 270px
+            width: 230px
+            font-size: 17px
             margin-bottom: 30px
         &__title
             margin-top: 120px
+            margin-bottom: 70px
             font-size: 17px
         &__wrapper
             justify-content: space-around
@@ -201,7 +215,7 @@
         &.active
             span
                 &:nth-child(1)
-                    transform: translateY(17px) rotate(-45deg)
+                    transform: translateY(16px) rotate(-45deg)
                 &:nth-child(2)
                     transform: translateY(-15px) rotate(45deg)
     .title
@@ -276,7 +290,7 @@
             width: 280px
             &__column
                 row-gap: 20px
-                
+
                 grid-template: repeat(2,240px)/290px
             &__next
                 right: 90px
@@ -292,10 +306,12 @@
             margin-top: 25px
     .contacts
         padding: 20px
-
+        &__form
+            margin-top: 30px
         &__wrapper
             grid-template: auto/100%
             margin-top: 5px
+            gap: 45px
         &__info
             flex-direction: column
             &-item
@@ -307,6 +323,8 @@
                 a
     .footer
         padding: 20px
+        &__wrapper
+            padding: 0
         &__about
             width: 100%
         &__logo
