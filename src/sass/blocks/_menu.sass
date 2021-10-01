@@ -27,16 +27,16 @@
     opacity: 0
     display: none
     position: fixed
-    top: 0
+    top: 200px
     left: 0
     width: 100vw
-    height: calc( 100vh - 150px)
-    margin-top: 100px
+    height: calc( 100vh - 200px)
     z-index: 1000
     transition: .5s all
     &.active
         display: flex
         align-items: center
+        justify-content: center
         opacity: 0
         transform: scale(0.5)
     &.transitioned
@@ -44,6 +44,7 @@
         transform: scale(1)
     &__wrapper
         z-index: 1000
+        width: 100%
     &__link
         color: rgba(255, 255, 255, 0.4)
         font-weight: bold
@@ -66,7 +67,7 @@
             transition: .6s all
             &:hover
                 transform: translateY(-15px)
-            svg
+            img
                 width: 32px
                 height: 32px
 
@@ -99,7 +100,6 @@
                 position: absolute
                 top: 0
                 overflow: hidden
-                padding: 10px 0
                 max-width: 0
                 border-bottom: 2px solid #fff
                 color: #fff
