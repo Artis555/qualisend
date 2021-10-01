@@ -1,19 +1,15 @@
 'use strict';
 
-
 document.addEventListener('DOMContentLoaded', () => {
-
     // menu
     const hamburger = document.querySelector('.hamburger'),
         menu = document.querySelector('.menu'),
         menuLinks = document.querySelectorAll('.menu__links'),
         overlay = document.querySelector('.menu__overlay'),
+        promoTitle = document.querySelector('.promo__title'),
+        promoButton = document.querySelector('.promo__btn'),
         header = document.querySelector('.promo__header');
     let isMenuOpen = false;
-    let isSidepanelOpen = false;
-
-
-
 
     // menu functions
     menuLinks.forEach(item => {
@@ -32,9 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('active');
             overlay.classList.add('active');
             hamburger.classList.add('active');
+            setTimeout(() => {
+                promoTitle.classList.add('transitioned');
+                promoButton.classList.add('transitioned');
+                menu.classList.add('transitioned');
+
+            }, 10);
             disableScroll();
         } else {
-            menu.classList.remove('active');
+            menu.classList.remove('transitioned');
+            promoTitle.classList.remove('transitioned');
+            promoButton.classList.remove('transitioned');
+            setTimeout(() => {
+                menu.classList.remove('active');
+            }, 500);
             header.classList.remove('active');
             overlay.classList.remove('active');
             hamburger.classList.remove('active');
@@ -42,8 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         isMenuOpen = !isMenuOpen;
     });
-
-
 
     const pageup = document.querySelector('.pageup');
     pageup.addEventListener('click', (e) => {
@@ -70,40 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 pageup.classList.remove('pageup-active');
             }, 500);
         }
-        const advantages = document.querySelector(".advantages"),
-            portfolio = document.querySelector(".portfolio");
-        const advantagesCoordsTop = getOffsetTop(advantages);
-        const advantagesTop = advantagesCoordsTop - parseInt(getComputedStyle(advantages).height);
-        const portfolioCoordsTop = getCoords(portfolio);
-        const portfolioTop = portfolioCoordsTop - parseInt(getComputedStyle(portfolio).height);
-        if ((window.scrollY > advantagesTop && window.scrollY < advantagesCoordsTop) || (window.scrollY > portfolioTop && window.scrollY < portfolioCoordsTop)) {
-            pageup.querySelector("svg path").style.fill = "#000";
-        } else {
-            pageup.querySelector("svg path").style.fill = "#fff";
-        }
-
-
     });
 
-    const getOffsetTop = element => {
-        let offsetTop = 0;
-        while (element) {
-            offsetTop += element.offsetTop;
-            element = element.offsetParent;
-        }
-        return offsetTop;
-    }
-
-    function getCoords(elem) { // crossbrowser version
-        const box = elem.getBoundingClientRect();
-
-        const body = document.body;
-        const docEl = document.documentElement;
-        const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-        const clientTop = docEl.clientTop || body.clientTop || 0;
-        const top = box.top + scrollTop - clientTop;
-        return Math.round(top);
-    }
     //slider
     let btnPrev = document.querySelector('.slider__prev');
     let btnNext = document.querySelector('.slider__next');
@@ -198,8 +171,8 @@ function enableScroll() {
 
 // animate
 const animItems = document.querySelectorAll('.anim__item'),
-        animLeft = document.querySelectorAll('.anim__left'),
-        animRight = document.querySelectorAll('.anim__right');
+    animLeft = document.querySelectorAll('.anim__left'),
+    animRight = document.querySelectorAll('.anim__right');
 window.addEventListener('scroll', animate);
 
 function addAnimate(item) {
@@ -217,19 +190,19 @@ function addAnimate(item) {
 
     if ((window.pageYOffset > itemOffset - itemPoint) && window.pageYOffset < itemOffset + itemHeight) {
         item.classList.add('anim-active');
-    } 
+    }
 }
 
 function animate() {
     animItems.forEach(item => {
         addAnimate(item);
     });
-    
+
     animLeft.forEach(item => {
         addAnimate(item);
     });
-    
-    
+
+
     animRight.forEach((item) => {
         addAnimate(item);
     });

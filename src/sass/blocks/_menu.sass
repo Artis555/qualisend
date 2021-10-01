@@ -24,20 +24,25 @@
         span
             background: #000
 .menu
-    width: 100%
     opacity: 0
-    position: relative
     display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: calc( 100vh - 150px)
     margin-top: 100px
     z-index: 1000
+    transition: .5s all
     &.active
-        display: block
+        display: flex
+        align-items: center
+        opacity: 0
+        transform: scale(0.5)
+    &.transitioned
         opacity: 1
-        .menu__wrapper
-            transition: all .6s
-            transform: translateX(0%)
+        transform: scale(1)
     &__wrapper
-        transform: translateX(-100%)
         z-index: 1000
     &__link
         color: rgba(255, 255, 255, 0.4)
@@ -60,24 +65,21 @@
         a
             transition: .6s all
             &:hover
-                
                 transform: translateY(-15px)
-        #vk
-            width: 32px
-            height: 32px
-        #inst
-            width: 32px
-            height: 32px
+            svg
+                width: 32px
+                height: 32px
+
     &__overlay
         display: none
-        position: fixed
+        position: absolute
         top: 0
         left: 0
-        width: 100%
-        height: 100%
+        width: 100vw
+        height: 100vh
         background-color: #000
         opacity: .94
-        z-index: 199
+        z-index: -1
         &.active
             display: block
     &__links
@@ -85,13 +87,11 @@
         justify-content: space-between
         grid-template: auto / repeat(auto-fit, minmax(300px, auto))
         row-gap: 30px
-        font-size: 50px
         text-transform: uppercase
         text-align: center
         a
+            font-size: 50px
             position: relative
-            padding: 10px 0
-            margin: 0 20px
             color: #616161
             text-shadow: none
             text-decoration: none
@@ -105,7 +105,7 @@
                 color: #fff
                 content: attr(data-hover)
                 transition: all 0.7s
-            &:hover 
+            &:hover
                 &:before
                     max-width: 100%
             &:last-child
