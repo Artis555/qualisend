@@ -133,6 +133,10 @@
         &__wrapper
             grid-template: auto/1fr
 @media (max-width: 767px)
+    .menu
+        &__links
+            a
+                font-size: 40px
     .title
         letter-spacing: 0.05em
     .promo
@@ -176,20 +180,21 @@
 
 @media (max-width: 595px)
     .menu
+        top: 165px
         &__links
             gap: 10px
-            padding: 20px
+            padding: 0 20px
             a
-                font-size: 30px
+                font-size: 28px
         &__link
             font-size: 35px
             line-height: 35px
         &__socials
-            margin-top: 0
+            margin-top: 20px
             justify-content: center
             gap: 40px
             a
-                svg
+                img
                     width: 22px
                     height: 22px
     .promo
@@ -207,7 +212,8 @@
         &__wrapper
             justify-content: space-around
         a.logo
-            font-size: 24px
+            width: 80px
+            height: 80px
     .hamburger
         height: 34px
         span
@@ -319,8 +325,6 @@
                 &:before
                     left: -19px
                     top: 10px
-            &-socials
-                a
     .footer
         padding: 20px
         &__wrapper
