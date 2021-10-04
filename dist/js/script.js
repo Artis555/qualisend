@@ -14,10 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // menu functions
     menuLinks.forEach(item => {
         item.addEventListener('click', () => {
+            menu.classList.remove('transitioned');
+            promoTitle.classList.remove('transitioned');
+            promoButton.classList.remove('transitioned');
             menu.classList.remove('active');
+            header.classList.remove('active');
             overlay.classList.remove('active');
             hamburger.classList.remove('active');
-            isMenuOpen = !isMenuOpen;
+            hamburger.style.pointerEvents = 'auto';
+            isMenuOpen = false;
             enableScroll();
         });
     });
