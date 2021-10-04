@@ -48,10 +48,32 @@
     a.logo
         width: 110px
         height: 110px
+        text-decoration: none
+        &:hover
+            .promo__text
+                visibility: visible
+                transform: translate(60%, -50%)
+                opacity: 1
         img
             width: 100%
             height: 100%
             object-fit: contain
+    &__text
+        font-size: 45px
+        color: #fff
+        opacity: 0
+        position: absolute
+        top: 50%
+        letter-spacing: 1rem
+        transform: translate(10%, -50%)
+        visibility: hidden
+        transition: .5s all
+        z-index: -1
+        text-transform: uppercase
+        
+        
+        
+        
     &__title
         margin-top: 100px
         margin-bottom: 140px
