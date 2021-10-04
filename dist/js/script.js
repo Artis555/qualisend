@@ -184,43 +184,32 @@ const animItems = document.querySelectorAll('.anim__item'),
     animRight = document.querySelectorAll('.anim__right');
 window.addEventListener('scroll', animate);
 
-function addAnimate(item) {
-    const itemHeight = item.offsetHeight;
-    const itemOffset = offset(item);
-    const animStart = 4;
-    let itemPoint;
-
-
-    if (itemHeight > window.innerHeight) {
-        itemPoint = window.innerHeight - window.innerHeight / animStart;
-    } else {
-        itemPoint = window.innerHeight - itemHeight / animStart;
-    }
-
-    if ((window.pageYOffset > itemOffset - itemPoint) && window.pageYOffset < itemOffset + itemHeight) {
-        item.classList.add('anim-active');
-    }
-}
-
 function animate() {
     animItems.forEach(item => {
-        addAnimate(item);
+        if (isPartiallyVisible(item)) 
+            item.classList.add('anim-active');
     });
 
     animLeft.forEach(item => {
-        addAnimate(item);
+        if (isPartiallyVisible(item)) 
+            item.classList.add('anim-active');
     });
 
 
     animRight.forEach((item) => {
-        addAnimate(item);
+        if (isPartiallyVisible(item)) 
+            item.classList.add('anim-active');
     });
 }
 
-function offset(e) {
-    const rect = e.getBoundingClientRect(),
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return rect.top + scrollTop;
+function isPartiallyVisible(el) {
+    var elementBoundary = el.getBoundingClientRect();
+
+    var top = elementBoundary.top;
+    var bottom = elementBoundary.bottom;
+    var height = elementBoundary.height;
+
+    return ((top + height >= 0) && (height + window.innerHeight >= bottom));
 }
 
 animate();
