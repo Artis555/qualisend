@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     hamburger.addEventListener('click', () => {
+        hamburger.style.pointerEvents = 'none';
         if (!isMenuOpen) {
             menu.classList.add('active');
             header.classList.add('active');
@@ -47,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.remove('active');
             enableScroll();
         }
+        setTimeout(() => {
+            hamburger.style.pointerEvents = 'auto';
+        }, 1000);
         isMenuOpen = !isMenuOpen;
     });
 
