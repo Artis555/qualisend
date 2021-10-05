@@ -23,11 +23,11 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff"> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fd248b">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon/site.webmanifest">
+    <link rel="mask-icon" href="icons/favicon/safari-pinned-tab.svg" color="#fd248b">
     <meta name="msapplication-TileColor" content="#9f00a7">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/style.min.css">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <div class="menu__overlay"></div>
+                    <div class="menu__overlay "></div>
                     <div class="menu__wrapper">
                         <div class="container">
                             <nav class="menu__links" id="link-effect">
@@ -101,7 +101,7 @@
                             В СОЗДАНИИ САЙТОВ
                         </div>
                     </div>
-                    <div class="about__quote">
+                    <!-- <div class="about__quote">
                         <div class="about__quote-wrapper">
                             <div class="about__quote-text">
                                 “Каждый клиент важен. Так же, как и каждая его проблема, которую мы должны решить”
@@ -113,7 +113,7 @@
                         <div class="about__quote-img">
                             <img src="img/photo_1.png" alt="photo">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="about__img anim__item">
@@ -285,9 +285,9 @@
 
     <section class="services" id="services">
         <div class="container">
-            <h2 class="title title__line services__title anim__item">услуги</h2>
+            <h2 class="title title__line services__title anim__item ">услуги</h2>
             <div class="card__wrapper">
-                <a href="web.html" class="card card__services">
+                <a href="web.html" class="card anim__item card__services ">
                     <img src="icons/services/web.svg" alt="web">
                     <div class="title title-black card__title">WEB-ДИЗАЙН</div>
                     <div class="card__descr">
@@ -303,7 +303,7 @@
                         </object>
                     </div>
                 </a>
-                <a href="web.html" class="card card__services">
+                <a href="web.html" class="card anim__item card__services">
                     <img src="icons/services/landing.svg" alt="landing">
                     <div class="title title-black card__title">лендинг</div>
                     <div class="card__subtitle">
@@ -322,7 +322,7 @@
                         </object>
                     </div>
                 </a>
-                <a href="web.html" class="card card__services">
+                <a href="web.html" class="card anim__item card__services">
                     <img src="icons/services/card.svg" alt="design">
                     <div class="title title-black card__title">сайт-визитка</div>
                     <div class="card__subtitle">
@@ -341,7 +341,7 @@
                         </object>
                     </div>
                 </a>
-                <a href="web.html" class="card card__services">
+                <a href="web.html" class="card anim__item card__services">
                     <img src="icons/services/onlinestore.svg" alt="design">
                     <div class="title title-black card__title">интернет-магазин</div>
                     <div class="card__descr">
@@ -373,7 +373,7 @@
                         </object>
                     </div>
                 </a> -->
-                <a href="web.html" class="card card__services">
+                <a href="web.html" class="card anim__item card__services">
                     <img src="icons/services/web.svg" alt="design">
                     <div class="title title-black card__title">РЕДИЗАЙН САЙТА</div>
                     <div class="card__descr">
@@ -396,7 +396,7 @@
     <section class="portfolio" id="portfolio">
         <div class="container">
             <h2 class="title title__line title-black portfolio__title anim__item">ПОРТФОЛИО</h2>
-            <div class="slider">
+            <div class="slider ">
                 <div class="slider__container">
                     <div class="slider__column">
                         <div class="slider__item">
@@ -453,13 +453,13 @@
         <div class="container">
             <h2 class="title title__line request__title anim__item">ОСТАВИТЬ ЗАЯВКУ</h2>
             <form action="#" class="request__form">
-                <input class="request__input" required placeholder="Ваше имя" name="name" type="text" id="name">
-                <input class="request__input" required placeholder="Телефон" name="tel" type="tel" id="tel">
-                <input class="request__input" required placeholder="E-Mail" name="email" type="email" id="email">
-                <input class="request__input" placeholder="Описание проблематики" type="text" name="descr" id="descr">
-                <button class="request__btn">Отправить</button>
-                <div class="request__policy">
-                    <input required type="checkbox">
+                <input class="request__input anim__left" required placeholder="Ваше имя" name="name" type="text" id="name">
+                <input class="request__input anim__left" required placeholder="Телефон" name="tel" type="tel" id="tel">
+                <input class="request__input anim__right" required placeholder="E-Mail" name="email" type="email" id="email">
+                <input class="request__input anim__right" placeholder="Описание проблематики" type="text" name="descr" id="descr">
+                <button class="request__btn anim__item">Отправить</button>
+                <div class="request__policy anim__item">
+                    <input required type="checkbox ">
                     <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
                 </div>
             </form>
@@ -472,7 +472,7 @@
             <h2 class="title title__line contacts__title anim__item">ПОЯВИЛИСЬ ВОПРОСЫ?</h2>
             <div class="contacts__subtitle anim__item">свяжитесь с нами!</div>
             <div class="contacts__wrapper">
-                <form action="#" class="contacts__form">
+                <form action="#" class="contacts__form anim__left">
                     <div class="contacts__input">
                         <input required class="contacts__input-field" name="contacts_name" type="text"
                             id="contacts_name">
@@ -494,7 +494,7 @@
                     <button class="contacts__btn">Отправить</button>
                 </form>
 
-                <div class="contacts__info">
+                <div class="contacts__info anim__right">
                     <div class="contacts__info-item">
                         <div class="contacts__info-type">Телефон:</div>
                         <div class="contacts__info-text">+7 999 999 99 99</div>
@@ -518,7 +518,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
-                <div class="footer__about">
+                <div class="footer__about anim__left">
                     <div class="footer__logo">qualis</div>
                     <div class="footer__text">
                         <div>2020 © Сайт Агентства Qualis</div>
@@ -527,7 +527,7 @@
                         <!-- <div>ООО “Design Group” ИНН:0000000000</div> -->
                     </div>
                 </div>
-                <div class="footer__contacts">
+                <div class="footer__contacts anim__right">
                     <div>+7 999 999 99 99</div>
                     <div>info@qualis.ru</div>
                     <div class="footer__socials">
