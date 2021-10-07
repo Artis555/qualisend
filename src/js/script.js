@@ -221,3 +221,197 @@ cards.forEach((item) => {
         item.classList.toggle('card-flipped');
     });
 });
+
+function CustomValidation() {
+
+}
+
+CustomValidation.prototype = {
+    invalidities: [],
+    validityChecks: [],
+    addInvalidity: function (message) {
+        this.invalidities.push(message);
+    },
+    getInvalidities: function () {
+        return this.invalidities.join('. \n');
+    },
+    checkValidity: function (input) {
+        for (var i = 0; i < this.validityChecks.length; i++) {
+            let isInvalid = this.validityChecks[i].isInvalid(input);
+            if (isInvalid) {
+                this.addInvalidity(this.validityChecks[i].invalidityMessage);
+            }
+
+            let requirementElement = this.validityChecks[i].element;
+            let list = requirementElement.parentNode.children[1];
+
+            if (requirementElement) {
+                if (isInvalid) {
+                    list.childNodes.forEach((e) => {
+                        if (this.validityChecks[i].invalidityMessage === e.textContent.slice(1)) {
+
+                            e.classList.add('invalid');
+                            e.classList.remove('valid');
+                        }
+                    });
+
+                } else {
+                    list.childNodes.forEach((e) => {
+                        if (this.validityChecks[i].invalidityMessage === e.textContent.slice(1)) {
+                            e.classList.remove('invalid');
+                            e.classList.add('valid');
+                        }
+                    });
+                }
+
+            }
+        }
+    }
+};
+
+const formName = document.querySelector("#name"),
+        formPhone = document.querySelector("#tel"),
+        formText = document.querySelector("#descr"),
+        formEmail = document.querySelector("#email"),
+        submit = document.querySelector(".request__btn");
+        formPhone.addEventListener("keyup", mask, false);
+        formPhone.addEventListener("focus", mask, false);
+        formText.addEventListener("blur", mask, false);
+
+
+const inputs = [formName, formPhone, formText, formEmail];
+var nameValidityChecks = [
+    {
+        isInvalid: function (input) {
+            return input.value.length < 2;
+        },
+        invalidityMessage: 'Не менее двух символов',
+        element: formName
+    },
+    {
+        isInvalid: function (input) {
+            var illegalCharacters = input.value.match(/[0-9]/g);
+            return illegalCharacters ? true : false;
+        },
+        invalidityMessage: 'Должны быть только буквы',
+        element: formName
+    }
+];
+
+var phoneValidityChecks = [
+    {
+        isInvalid: function (input) {
+            let value = input.value;
+            value = value.replaceAll("+", "");
+            value = value.replaceAll("-", "");
+            value = value.replaceAll("(", "");
+            value = value.replaceAll(")", "");
+            value = value.replaceAll(" ", "");
+            return value.length < 11;
+        },
+        invalidityMessage: 'Не менее одиннадцати символов',
+        element: formPhone
+    },
+    {
+        isInvalid: function (input) {
+            var illegalCharacters = input.value.match(/[a-zA-Z]/g);
+            return illegalCharacters ? true : false;
+        },
+        invalidityMessage: 'Должны быть только цифры',
+        element: formPhone
+    }
+];
+
+var emailValidityChecks = [
+    {
+        isInvalid: function (input) {
+            return input.value.length < 5;
+        },
+        invalidityMessage: 'Не менее пяти символов',
+        element: formEmail
+    },
+    {
+        isInvalid: function (input) {
+            var illegalCharacters = input.value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+            return illegalCharacters ? false : true;
+        },
+        invalidityMessage: `Email должен соответствовать шаблону-*@*.*`,
+        element: formEmail
+    }
+];
+
+formName.CustomValidation = new CustomValidation();
+formName.CustomValidation.validityChecks = nameValidityChecks;
+
+formPhone.CustomValidation = new CustomValidation();
+formPhone.CustomValidation.validityChecks = phoneValidityChecks;
+
+if (formEmail) {
+    formEmail.CustomValidation = new CustomValidation();
+    formEmail.CustomValidation.validityChecks = emailValidityChecks;
+}
+
+inputs.forEach((e) => {
+    if (e) {
+        e.addEventListener('keyup', function () {
+            checkInput(e);
+        });
+        e.addEventListener('focus', function () {
+            checkInput(e);
+        });
+        e.addEventListener('blur', function () {
+        });
+    }
+});
+submit.addEventListener('click', function () {
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i]) {
+            checkInput(inputs[i]);
+        }
+    }
+});
+
+function mask(event) {
+    var matrix = "+7 (___)-___-__-__",
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, "");
+    if (def.length >= val.length) {
+        val = def;
+    }
+    this.value = matrix.replace(/./g, function (a) {
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+    });
+    if (event.type == "blur") {
+        if (this.value.length == 2) {
+            this.value = "";
+        }
+    } else {
+        setCursorPosition(this.value.length, this);
+    }
+}
+
+function checkInput(input) {
+    input.CustomValidation.invalidities = [];
+    input.CustomValidation.checkValidity(input);
+
+    if (input.CustomValidation.invalidities.length == 0 && input.value != '') {
+        input.setCustomValidity('');
+    } else {
+        var message = input.CustomValidation.getInvalidities();
+        input.setCustomValidity(message);
+    }
+}
+
+function setCursorPosition(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) {
+        elem.setSelectionRange(pos, pos);
+    } else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select();
+    }
+}
