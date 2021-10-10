@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // init next button
         btnNext.addEventListener('click', () => {
+            btnNext.style.pointerEvents = 'none';
             for (let i = 0; i < columns.length - 1; i++) {
                 positions.set(columns[i], positions.get(columns[i]) + movePosition);
                 columns[i].style.cssText = `
@@ -115,10 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 transform: translateX(${positions.get(columns[columns.length - 1])}px);
             `;
             columns.unshift(columns.pop());
+            setTimeout(() => {
+                btnNext.style.pointerEvents = 'auto';
+            }, 150);
         });
 
         // init prev button
         btnPrev.addEventListener('click', () => {
+            btnPrev.style.pointerEvents = 'none';
             for (let i = 1; i < columns.length; i++) {
                 positions.set(columns[i], positions.get(columns[i]) - movePosition);
                 columns[i].style.cssText = `
@@ -132,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 transform: translateX(${positions.get(columns[0])}px);
             `;
             columns.push(columns.shift());
+            setTimeout(() => {
+                btnPrev.style.pointerEvents = 'auto';
+            }, 150);
         });
     }
 
@@ -186,18 +194,18 @@ window.addEventListener('scroll', animate);
 
 function animate() {
     animItems.forEach(item => {
-        if (isPartiallyVisible(item)) 
+        if (isPartiallyVisible(item))
             item.classList.add('anim-active');
     });
 
     animLeft.forEach(item => {
-        if (isPartiallyVisible(item)) 
+        if (isPartiallyVisible(item))
             item.classList.add('anim-active');
     });
 
 
     animRight.forEach((item) => {
-        if (isPartiallyVisible(item)) 
+        if (isPartiallyVisible(item))
             item.classList.add('anim-active');
     });
 }
@@ -270,13 +278,13 @@ CustomValidation.prototype = {
 };
 
 const formName = document.querySelector("#name"),
-        formPhone = document.querySelector("#tel"),
-        formText = document.querySelector("#descr"),
-        formEmail = document.querySelector("#email"),
-        submit = document.querySelector(".request__btn");
-        formPhone.addEventListener("keyup", mask, false);
-        formPhone.addEventListener("focus", mask, false);
-        formText.addEventListener("blur", mask, false);
+    formPhone = document.querySelector("#phone"),
+    formText = document.querySelector("#question"),
+    formEmail = document.querySelector("#email"),
+    submit = document.querySelector(".request__btn");
+formPhone.addEventListener("keyup", mask, false);
+formPhone.addEventListener("focus", mask, false);
+formText.addEventListener("blur", mask, false);
 
 
 const inputs = [formName, formPhone, formText, formEmail];

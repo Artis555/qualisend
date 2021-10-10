@@ -50,7 +50,6 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <div class="menu__overlay "></div>
                     <div class="menu__wrapper">
                         <div class="container">
                             <nav class="menu__links" id="link-effect">
@@ -69,6 +68,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="menu__overlay"></div>
             </div>
             <div class="title promo__title anim__item">ЛУЧШИЕ В СОЗДАНИИ САЙТОВ ПОД КЛЮЧ</div>
             <a class="promo__btn anim__item" href="#request">оставить заявку</a>
@@ -448,23 +448,26 @@
             </div>
         </div>
     </section>
-
+    <!-- 
     <section class="request" id="request">
         <div class="container">
             <h2 class="title title__line request__title anim__item">ОСТАВИТЬ ЗАЯВКУ</h2>
             <form action="#" class="request__form">
-                <input class="request__input anim__left" required placeholder="Ваше имя" name="name" type="text" id="name">
+                <input class="request__input anim__left" required placeholder="Ваше имя" name="name" type="text"
+                    id="name">
                 <input class="request__input anim__left" required placeholder="Телефон" name="tel" type="tel" id="tel">
-                <input class="request__input anim__right" required placeholder="E-Mail" name="email" type="email" id="email">
-                <input class="request__input anim__right" placeholder="Описание проблематики" type="text" name="descr" id="descr">
+                <input class="request__input anim__right" required placeholder="E-Mail" name="email" type="email"
+                    id="email">
+                <input class="request__input anim__right" placeholder="Описание проблематики" type="text" name="descr"
+                    id="descr">
                 <button class="request__btn anim__item">Отправить</button>
                 <div class="request__policy anim__item">
-                    <input required type="checkbox ">
+                    <input required type="checkbox">
                     <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
                 </div>
             </form>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="contacts" id="contacts">
@@ -474,22 +477,24 @@
             <div class="contacts__wrapper">
                 <form action="#" class="contacts__form anim__left">
                     <div class="contacts__input">
-                        <input required class="contacts__input-field" name="contacts_name" type="text"
-                            id="contacts_name">
+                        <input required class="contacts__input-field" name="contacts_name" type="text" id="name">
                         <label for="contacts_name">фио</label>
                     </div>
                     <div class="contacts__input">
-                        <input required class="contacts__input-field" name="contacts_tel" type="tel" id="contacts_tel">
+                        <input required class="contacts__input-field" name="contacts_tel" type="tel" id="phone">
                         <label for="contacts_tel">телефон</label>
                     </div>
                     <div class="contacts__input">
-                        <input required class="contacts__input-field" name="contacts_email" type="text"
-                            id="contacts_email">
+                        <input required class="contacts__input-field" name="contacts_email" type="text" id="email">
                         <label for="contacts_email">e-mail</label>
                     </div>
                     <div class="contacts__input">
                         <input required class="contacts__input-field" type="text" name="question" id="question">
                         <label for="question">вопрос</label>
+                    </div>
+                    <div class="contacts__policy anim__item">
+                        <input required type="checkbox">
+                        <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
                     </div>
                     <button class="contacts__btn">Отправить</button>
                 </form>
