@@ -251,25 +251,14 @@ CustomValidation.prototype = {
             }
 
             let requirementElement = this.validityChecks[i].element;
-            let list = requirementElement.parentNode.children[1];
 
             if (requirementElement) {
-                if (isInvalid) {
-                    list.childNodes.forEach((e) => {
-                        if (this.validityChecks[i].invalidityMessage === e.textContent.slice(1)) {
-
-                            e.classList.add('invalid');
-                            e.classList.remove('valid');
-                        }
-                    });
-
+                if (isInvalid) {      
+                    requirementElement.classList.add('invalid');
+                    requirementElement.classList.remove('valid');
                 } else {
-                    list.childNodes.forEach((e) => {
-                        if (this.validityChecks[i].invalidityMessage === e.textContent.slice(1)) {
-                            e.classList.remove('invalid');
-                            e.classList.add('valid');
-                        }
-                    });
+                    requirementElement.classList.remove('invalid');
+                    requirementElement.classList.add('valid');    
                 }
 
             }
@@ -291,9 +280,9 @@ const inputs = [formName, formPhone, formText, formEmail];
 var nameValidityChecks = [
     {
         isInvalid: function (input) {
-            return input.value.length < 2;
+            return input.value.length == 0 || input.value == "";
         },
-        invalidityMessage: 'Не менее двух символов',
+        invalidityMessage: 'Введите имя',
         element: formName
     },
     {
@@ -303,10 +292,39 @@ var nameValidityChecks = [
         },
         invalidityMessage: 'Должны быть только буквы',
         element: formName
+    },
+    {
+        isInvalid: function (input) {
+            return input.value.length < 2;
+        },
+        invalidityMessage: 'Не менее двух символов',
+        element: formName
     }
 ];
 
 var phoneValidityChecks = [
+    {
+        isInvalid: function (input) {
+            return input.value.length == 0 || input.value == "";
+        },
+        invalidityMessage: 'Введите телефон',
+        element: formPhone
+    },
+    {
+        isInvalid: function (input) {
+            var illegalCharacters = input.value.match(/[a-zA-Z]/g);
+            return illegalCharacters ? true : false;
+        },
+        invalidityMessage: 'Должны быть только цифры',
+        element: formPhone
+    },
+    {
+        isInvalid: function (input) {
+            return (input.value == null || input.value == "" || input.value.length == 0) ? true : false;
+        },
+        invalidityMessage: 'Введите телефон',
+        element: formPhone
+    },
     {
         isInvalid: function (input) {
             let value = input.value;
@@ -318,14 +336,6 @@ var phoneValidityChecks = [
             return value.length < 11;
         },
         invalidityMessage: 'Не менее одиннадцати символов',
-        element: formPhone
-    },
-    {
-        isInvalid: function (input) {
-            var illegalCharacters = input.value.match(/[a-zA-Z]/g);
-            return illegalCharacters ? true : false;
-        },
-        invalidityMessage: 'Должны быть только цифры',
         element: formPhone
     }
 ];
@@ -340,7 +350,7 @@ var emailValidityChecks = [
     },
     {
         isInvalid: function (input) {
-            var illegalCharacters = input.value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+            var illegalCharacters = input.value.match(/^[^@]+@[^@.]+\.[^@][^@]+$/);
             return illegalCharacters ? false : true;
         },
         invalidityMessage: `Email должен соответствовать шаблону-*@*.*`,
@@ -354,10 +364,10 @@ formName.CustomValidation.validityChecks = nameValidityChecks;
 formPhone.CustomValidation = new CustomValidation();
 formPhone.CustomValidation.validityChecks = phoneValidityChecks;
 
-if (formEmail) {
-    formEmail.CustomValidation = new CustomValidation();
-    formEmail.CustomValidation.validityChecks = emailValidityChecks;
-}
+
+formEmail.CustomValidation = new CustomValidation();
+formEmail.CustomValidation.validityChecks = emailValidityChecks;
+
 
 inputs.forEach((e) => {
     if (e) {
