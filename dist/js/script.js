@@ -281,10 +281,10 @@ const formName = document.querySelector("#name"),
     formPhone = document.querySelector("#phone"),
     formText = document.querySelector("#question"),
     formEmail = document.querySelector("#email"),
-    submit = document.querySelector(".request__btn");
+    submit = document.querySelector(".contacts__btn");
 formPhone.addEventListener("keyup", mask, false);
 formPhone.addEventListener("focus", mask, false);
-formText.addEventListener("blur", mask, false);
+formPhone.addEventListener("blur", mask, false);
 
 
 const inputs = [formName, formPhone, formText, formEmail];
@@ -362,19 +362,24 @@ if (formEmail) {
 inputs.forEach((e) => {
     if (e) {
         e.addEventListener('keyup', function () {
-            checkInput(e);
+            if (e.value)
+                e.classList.add("active");
+            if (e != formText) checkInput(e);
         });
         e.addEventListener('focus', function () {
-            checkInput(e);
+            e.classList.add("active");
+            if (e != formText) checkInput(e);
         });
         e.addEventListener('blur', function () {
+            if (!e.value)
+                e.classList.remove("active");
         });
     }
 });
 submit.addEventListener('click', function () {
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i]) {
-            checkInput(inputs[i]);
+            if (inputs[i] != formText) checkInput(inputs[i]);
         }
     }
 });
