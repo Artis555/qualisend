@@ -221,3 +221,9 @@ cards.forEach((item) => {
         item.classList.toggle('card-flipped');
     });
 });
+
+
+
+
+
+
