@@ -253,15 +253,15 @@ CustomValidation.prototype = {
             let requirementElement = this.validityChecks[i].element;
 
             if (requirementElement) {
-                if (isInvalid) {      
+                if (isInvalid) {
                     requirementElement.classList.add('invalid');
                     requirementElement.classList.remove('valid');
                 } else {
                     requirementElement.classList.remove('invalid');
-                    requirementElement.classList.add('valid');    
+                    requirementElement.classList.add('valid');
                 }
-
             }
+            if (isInvalid) break;
         }
     }
 };
