@@ -184,8 +184,12 @@
         &__links
             gap: 10px
             padding: 0 20px
+            margin-top: 20px
             a
                 font-size: 28px
+            &:hover
+                &:before
+                    max-width: 100%
         &__link
             font-size: 35px
             line-height: 35px
@@ -214,6 +218,9 @@
         a.logo
             width: 80px
             height: 80px
+            &:hover
+                .promo__text
+                    visibility: hidden
     .hamburger
         height: 34px
         span
