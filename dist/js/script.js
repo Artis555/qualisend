@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             columns.push(columns.shift());
             setTimeout(() => {
                 btnPrev.style.pointerEvents = 'auto';
-            }, 150);
+            }, 400);
         });
     }
 
