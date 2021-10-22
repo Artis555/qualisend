@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let btnNext = document.querySelector('.slider__next');
     let columns = [];
     let positions = new Map();
-    let movePosition = 320;
+    let movePosition = parseInt(getComputedStyle(document.querySelector('.slider__item')).width) + 30;
 
     function sliderInit() {
         // init columns array and map with positons
