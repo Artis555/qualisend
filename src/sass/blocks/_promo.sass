@@ -2,6 +2,12 @@
     min-height: 100vh
     background: url('../img/bg/main.jpg') center (center/cover) no-repeat
     padding-top: 71px
+
+    &__main
+        height: calc( 100vh - 110px )
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
     &__stocks
         background: none
         min-height: 100px
@@ -70,13 +76,8 @@
         transition: .5s all
         z-index: -1
         text-transform: uppercase
-        
-        
-        
-        
+
     &__title
-        margin-top: 100px
-        margin-bottom: 140px
         transform: scale(1)
         transition: .5s all
         opacity: 1
