@@ -233,7 +233,6 @@
         &__line
             &::before, &::after
                 display: none
-
     .card
         &__wrapper
             margin-top: 25px
@@ -291,7 +290,6 @@
         grid-template: auto/260px
     .services
         padding: 20px
-
     .portfolio
         padding: 20px
         padding-bottom: 100px
@@ -300,12 +298,15 @@
             width: 280px
             &__column
                 row-gap: 20px
-
                 grid-template: repeat(2,240px)/290px
+            &__item img
+                width: 290px
             &__next
+                display: inline
                 right: 90px
                 bottom: -340px
             &__prev
+                display: inline
                 left: 90px
                 bottom: -340px
     .request
