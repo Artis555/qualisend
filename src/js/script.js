@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let btnNext = document.querySelector('.slider__next');
     let columns = [];
     let positions = new Map();
-    let movePosition = 320;
+    let movePosition = parseInt(getComputedStyle(document.querySelector('.slider__item')).width) + 30;
 
     function sliderInit() {
         // init columns array and map with positons
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     transform: translateX(${positions.get(columns[i])}px);
                 `;
             }
-            positions.set(columns[columns.length - 1], positions.get(columns[columns.length - 1]) - 4 * movePosition);
+            positions.set(columns[columns.length - 1], positions.get(columns[columns.length - 1]) - (columns.length - 1) * movePosition);
             columns[columns.length - 1].style.cssText = `
                 visibility: hidden;
                 transform: translateX(${positions.get(columns[columns.length - 1])}px);
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             columns.unshift(columns.pop());
             setTimeout(() => {
                 btnNext.style.pointerEvents = 'auto';
-            }, 150);
+            }, 400);
         });
 
         // init prev button
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     transform: translateX(${positions.get(columns[i])}px);
                 `;
             }
-            positions.set(columns[0], positions.get(columns[0]) + 4 * movePosition);
+            positions.set(columns[0], positions.get(columns[0]) + (columns.length - 1) * movePosition);
             columns[0].style.cssText = `
                 visibility: hidden;
                 transform: translateX(${positions.get(columns[0])}px);
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             columns.push(columns.shift());
             setTimeout(() => {
                 btnPrev.style.pointerEvents = 'auto';
-            }, 150);
+            }, 400);
         });
     }
 

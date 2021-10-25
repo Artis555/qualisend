@@ -15,8 +15,7 @@
             position: relative
             display: grid
             gap: 30px
-            grid-template: auto / repeat(5, 1fr)
-            left: -330px
+            grid-template: auto / repeat(3, 1fr)
         &__column
             display: grid
             grid-template: repeat(2, 250px) / 300px
@@ -30,6 +29,7 @@
                 height: 100%
                 object-fit: cover
         &__prev
+            display: none
             user-select: none
             cursor: pointer
             position: absolute
@@ -38,6 +38,7 @@
             left: 0
             transition: .2s all
         &__next
+            display: none
             user-select: none
             cursor: pointer
             position: absolute
