@@ -444,6 +444,13 @@ function setCursorPosition(pos, elem) {
     }
 }
 
+const modalClose = document.querySelector('.modal__close');
+const modalOverlay = document.querySelector('.modal__overlay');
+modalClose.addEventListener('click', () => {
+    modalOverlay.classList.remove('active');
+    enableScroll();
+});
+
 
 
 
