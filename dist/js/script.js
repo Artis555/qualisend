@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('active');
             overlay.classList.add('active');
             hamburger.classList.add('active');
+            document.querySelector('html').style.overflowY='hidden';
+            window.addEventListener('keydown', preventDefault, false);
             setTimeout(() => {
                 promoTitle.classList.add('transitioned');
                 promoButton.classList.add('transitioned');
@@ -42,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 10);
             disableScroll();
         } else {
+            document.querySelector('html').style.overflowY='scroll';
+            window.removeEventListener('keydown', preventDefault, false);
             menu.classList.remove('transitioned');
             promoTitle.classList.remove('transitioned');
             promoButton.classList.remove('transitioned');
@@ -439,6 +443,13 @@ function setCursorPosition(pos, elem) {
         range.select();
     }
 }
+
+const modalClose = document.querySelector('.modal__close');
+const modalOverlay = document.querySelector('.modal__overlay');
+modalClose.addEventListener('click', () => {
+    modalOverlay.classList.remove('active');
+    enableScroll();
+});
 
 
 
